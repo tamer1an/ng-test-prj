@@ -2,14 +2,25 @@
 <html lang="en" ng-app>
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
-  <link rel="stylesheet" href="css/app.css">
+  <title>Ng menu</title>
+
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+
   <script src="lib/angular/angular.js"></script>
+  <script src="js/resources.js"></script>
+  <script src="js/controllers.js"></script>
+
 </head>
 <body>
 
-  <p>Nothing here {{'yet' + '!'}}</p>
+    <menu ng-controller="MenuCtrl">
+      <ul>
+          <li ng-repeat="menu in menus" title="{{menu.title}}">
+            <a href="{{menu.url}}"> {{menu.name}} </a>
+          </li>
+      </ul>
+    </menu>
 
 </body>
 </html>
