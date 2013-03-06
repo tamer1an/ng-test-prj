@@ -1,5 +1,6 @@
+
 /**
- * @license AngularJS v1.0.5
+ * @license AngularJS v1.0.2
  * (c) 2010-2012 Google, Inc. http://angularjs.org
  * License: MIT
  *
@@ -202,30 +203,6 @@ angular.mock.$Browser.prototype = {
  * Mock implementation of {@link ng.$exceptionHandler} that rethrows or logs errors passed
  * into it. See {@link ngMock.$exceptionHandlerProvider $exceptionHandlerProvider} for configuration
  * information.
- *
- *
- * <pre>
- *   describe('$exceptionHandlerProvider', function() {
- *
- *     it('should capture log messages and exceptions', function() {
- *
- *       module(function($exceptionHandlerProvider) {
- *         $exceptionHandlerProvider.mode('log');
- *       });
- *
- *       inject(function($log, $exceptionHandler, $timeout) {
- *         $timeout(function() { $log.log(1); });
- *         $timeout(function() { $log.log(2); throw 'banana peel'; });
- *         $timeout(function() { $log.log(3); });
- *         expect($exceptionHandler.errors).toEqual([]);
- *         expect($log.assertEmpty());
- *         $timeout.flush();
- *         expect($exceptionHandler.errors).toEqual(['banana peel']);
- *         expect($log.log.logs).toEqual([[1], [2], [3]]);
- *       });
- *     });
- *   });
- * </pre>
  */
 
 angular.mock.$ExceptionHandlerProvider = function() {
@@ -244,8 +221,8 @@ angular.mock.$ExceptionHandlerProvider = function() {
    *   - `rethrow`: If any errors are are passed into the handler in tests, it typically
    *                means that there is a bug in the application or test, so this mock will
    *                make these tests fail.
-   *   - `log`: Sometimes it is desirable to test that an error is throw, for this case the `log` mode stores an
-   *            array of errors in `$exceptionHandler.errors`, to allow later assertion of them.
+   *   - `log`: Sometimes it is desirable to test that an error is throw, for this case the `log` mode stores the
+   *            error and allows later assertion of it.
    *            See {@link ngMock.$log#assertEmpty assertEmpty()} and
    *             {@link ngMock.$log#reset reset()}
    */
@@ -585,7 +562,7 @@ angular.mock.$LogProvider = function() {
 
 /**
  * @ngdoc function
- * @name angular.mock.dump
+ * @name angular.mock.debug
  * @description
  *
  * *NOTE*: this is not an injectable instance, just a globally available function.
@@ -768,7 +745,7 @@ angular.mock.dump = function(object) {
    }
 
    // testing controller
-   var $httpBackend;
+   var $http;
 
    beforeEach(inject(function($injector) {
      $httpBackend = $injector.get('$httpBackend');
