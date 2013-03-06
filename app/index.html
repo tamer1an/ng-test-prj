@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>Ng menu</title>
@@ -8,18 +8,31 @@
   <link rel="stylesheet" href="css/app.css">
 
   <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/resources.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
 
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+         <script src="//code.jquery.com/jquery-2.0.0b2.js"></script>
+    <!--<![endif]-->
+
+    <script src="js/script.js"></script>
 </head>
-<body>
+<body ng-app="menuApp">
 
-    <menu ng-controller="MenuCtrl">
+    <menu ng-click="hello('app')" ng-controller="MenuCtrl">
+
       <ul>
-          <li ng-repeat="menu in menus" title="{{menu.title}}">
+          <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
             <a href="{{menu.url}}"> {{menu.name}} </a>
           </li>
       </ul>
+
+        <!--{{ "lower cap string" | uppercase }}-->
     </menu>
 
 </body>

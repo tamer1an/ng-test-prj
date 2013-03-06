@@ -2,3 +2,7 @@
 menu li {
     display: inline;
 }
+
+.active {
+    background-color: red;
+}
