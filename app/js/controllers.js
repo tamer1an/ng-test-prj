@@ -2,12 +2,19 @@
 
 
 /* Controllers */
-function MenuCtrl($scope) {
+function MenuCtrl($scope,$location ) {    //$window
     $scope.menus = menus;
 
 
-    //testing ng-click
-    $scope.hello = function(name) {
-        console.log('Hello ' + (name || 'world') + '!');
-    }
+
+    console.log( $location )
+
+    $scope.active = function(name) {
+       console.log($scope.menus[0].active=1)
+    };
+
+   $scope.helloThis = function(app) {
+        //  console.log(app);
+        //  console.log($('#'+app.$id));
+    };
 }

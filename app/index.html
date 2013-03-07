@@ -24,11 +24,11 @@
 </head>
 <body ng-app="menuApp">
 
-    <menu ng-click="hello('app')" ng-controller="MenuCtrl">
+    <menu ng-click="helloThis(this)" ng-controller="MenuCtrl">
 
       <ul>
           <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
-            <a href="{{menu.url}}"> {{menu.name}} </a>
+            <a ng-click="active(this)" href="{{menu.url}}"> {{menu.name}} </a>
           </li>
       </ul>
 

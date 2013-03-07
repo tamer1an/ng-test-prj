@@ -12,8 +12,8 @@ var menus =[
         "url":'/user'},
     {"name": "Video",
         "title":"video",
-        "url":'/video',
-        "active":"1"},
+        "url":'/video'
+        },
     {"name": "Player",
         "title":"player",
         "url":'/player'},
