@@ -1,6 +1,6 @@
-'use strict';
+//'use strict';
 
 /* App Module */
-angular.module('menuApp', ['menuAppFilters']);
+//angular.module('menuApp', ['menuAppFilters']);
 
 
