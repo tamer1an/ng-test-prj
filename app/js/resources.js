@@ -9,18 +9,25 @@
 var menus =[
     {"name": "User",
         "title":"user",
-        "url":'/user'},
+        "url":'#' //'/user'
+    },
     {"name": "Video",
         "title":"video",
-        "url":'/video'
+        "url":'#', //'/video',
+        "active":1
         },
     {"name": "Player",
         "title":"player",
-        "url":'/player'},
+        "url":'#' //'/player'
+    },
     {"name": "Playlist",
         "title":"Playlist",
-        "url":'/playlist'},
+        "url":'#' //'/playlist'
+    },
     {"name": "User-Account",
         "title":"user-account",
-        "url":'/user-account'}
+        "url":'#' //'/user-account'
+    }
 ];
+
+

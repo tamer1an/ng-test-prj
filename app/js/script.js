@@ -7,9 +7,9 @@
  */
 
 
-$(document).ready(function(){
-    $('a').on('click', function(e){
-        e.preventDefault();
-        return false;
-    });
-});
+//$(document).ready(function(){
+//    $('a').on('click', function(e){
+//        e.preventDefault();
+//        return false;
+//    });
+//});

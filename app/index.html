@@ -1,26 +1,32 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" xmlns:ng="http://angularjs.org">
 <head>
   <meta charset="utf-8">
   <title>Ng menu</title>
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
-
+    <!-- Angular seed -->
   <script src="lib/angular/angular.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="//code.jquery.com/jquery-2.0.0b2.js"></script>
+    <!--<![endif]-->
+
+  <!-- Global page App-->
   <script src="js/app.js"></script>
+  <!-- Example Data source -->
   <script src="js/resources.js"></script>
+
+    <!-- Angular App functionality -->
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
 
-    <!--[if lt IE 9]>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
-         <script src="//code.jquery.com/jquery-2.0.0b2.js"></script>
-    <!--<![endif]-->
-
-    <script src="js/script.js"></script>
+    <!-- Base javascript  -->
+  <script src="js/script.js"></script>
 </head>
 <body ng-app="menuApp">
 
@@ -32,7 +38,12 @@
           </li>
       </ul>
 
+
         <!--{{ "lower cap string" | uppercase }}-->
+
+        <!--<div id="sidebar">-->
+            <!--<ng:include src="'tpl/wine-list.html'"></ng:include>-->
+        <!--</div>-->
     </menu>
 
 </body>
