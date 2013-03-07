@@ -9,7 +9,7 @@
 var menus =[
     {"name": "User",
         "title":"user",
-        "url":'#' //'/user'
+        "url":'/ng-test-prj/app/index.html' //'/user'
     },
     {"name": "Video",
         "title":"video",
@@ -18,7 +18,7 @@ var menus =[
         },
     {"name": "Player",
         "title":"player",
-        "url":'#' //'/player'
+        "url":'/ng-test-prj/app/' //'/player'
     },
     {"name": "Playlist",
         "title":"Playlist",
