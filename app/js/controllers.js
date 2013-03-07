@@ -2,7 +2,7 @@
 
 
 /* Controllers */
-function MenuCtrl($scope,$location ) {    //$window
+function MenuCtrl($scope,$location)) {    //$window
     $scope.menus = menus;
 
 
