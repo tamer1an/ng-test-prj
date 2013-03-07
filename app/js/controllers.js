@@ -1,31 +1,20 @@
 'use strict';
 
 /* Controllers */
-function MenuCtrl($scope,$location) {console.warn('Test angular location objects',$location);  //$window, $document
+function MenuCtrl($scope,$location) { //console.warn('Test angular location objects',$location);  //$window, $document
     $scope.menus = menus;
 
-    $scope.active = function(node) {
-        console.log( this );
-        console.log( this.$id );
-        console.log( this.$index );
-
-//      var log = [];
-        angular.forEach($scope.menus, function(value, key){
-//           this.push(key + ': ' + $scope.menus[key].active);
-            ($scope.menus[key].active)?$scope.menus[key].active=0:'false';//        console.log($scope.menus[key].active)
-        }); // console.log(log);
+    $scope.active = function() { //console.error( this,this.$id, this.$index );
+        // var log = [];
+        angular.forEach($scope.menus, function(value, key){     // this.push(key + ': ' + $scope.menus[key].active);   // if var log was defined
+            ($scope.menus[key].active)?$scope.menus[key].active=0:'false';
+        }/*, log*/);
 
         $scope.menus[this.$index].active = 1;
-
-//       console.log('active func node',node,node.this,node.this.$parent);
-//       console.log(node.$id,$('#'+node.$id),$('#'+node.$id).size());
-    };
-
-   $scope.helloThis = function(node) {
-        console.warn('hello this func:',node);
-//        console.log($('#'+node.$id));
     };
 }
+
+
 
 
 

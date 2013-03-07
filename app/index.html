@@ -30,21 +30,24 @@
 </head>
 <body ng-app="menuApp">
 
-    <menu ng-click="helloThis(this)" ng-controller="MenuCtrl">
-
+    <menu ng-controller="MenuCtrl">
       <ul>
           <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">          <!-- ng-bind-html="{{menu.name | linky}}" -->
-            <a ng-click="active(this)" href="{{menu.url}}"> {{menu.name}} </a>
+            <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
           </li>
       </ul>
-
-
-        <!--{{ "lower cap string" | uppercase }}-->
-
-        <!--<div id="sidebar">-->
-            <!--<ng:include src="'tpl/wine-list.html'"></ng:include>-->
-        <!--</div>-->
     </menu>
 
 </body>
 </html>
+
+
+
+
+
+
+<!--{{ "lower cap string" | uppercase }}-->
+
+<!--<div id="sidebar">-->
+<!--<ng:include src="'tpl/wine-list.html'"></ng:include>-->
+<!--</div>-->

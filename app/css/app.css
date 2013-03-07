@@ -1,8 +1,5 @@
 /* app css stylesheet */
-menu li {
-    display: inline;
-}
 
-.active {
-    background-color: red;
-}
+/*Menu css setup*/
+menu li { display: inline; }
+.active { background-color: red; }

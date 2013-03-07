@@ -13,8 +13,8 @@ var menus =[
     },
     {"name": "Video",
         "title":"video",
-        "url":'#', //'/video',
-        "active":1
+        "url":'#' //'/video',
+//        , "active":1
         },
     {"name": "Player",
         "title":"player",
