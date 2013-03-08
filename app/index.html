@@ -35,16 +35,10 @@
       </ul>
       <ul>
           <li ng-repeat="submenu in active_menu.submenu" title="{{submenu.title}}" class="{{submenu.active | active}}">
-              <a href="{{submenu.url}}"> {{submenu.name}} </a>
+              <a ng-click="active(active_menu.submenu)" href="{{submenu.url}}"> {{submenu.name}} </a>
           </li>
       </ul>
-
-        <!-- TODO: Design sub menu structure -->
-        <!--<ul>-->
-            <!--<li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">-->
-                <!--<a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>-->
-            <!--</li>-->
-        <!--</ul>-->
+      
     </menu>
 </body>
 

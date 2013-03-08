@@ -17,7 +17,8 @@ var menus =[
         },{
             "name": "Edit User",
             "title":"Edit user",
-            "url":'#'
+            "url":'#',
+            "active":1
         }]
     },
     {
@@ -28,15 +29,16 @@ var menus =[
     {
         "name": "Player",
         "title":"player",
-        "url":'/ng-test-prj/app/',
+        "url":'#',
         "submenu": [{
             "name": "Add Player",
             "title":"Add Player",
-            "url":'#'
+            "url":'/ng-test-prj/app/'
         },{
             "name": "Edit Player",
             "title":"Edit Player",
-            "url":'#'
+            "url":'#',
+            "active": 1
         }]
     },
     {

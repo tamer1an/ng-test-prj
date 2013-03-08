@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c069cf5-db7e-46b8-ba80-d830a75b704b" name="Default" comment="menu up">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-cookies.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-cookies.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-cookies.min.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-cookies.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-loader.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-loader.min.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-loader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-resource.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-resource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-resource.min.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-resource.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-sanitize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular-sanitize.min.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular-sanitize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/angular.min.js" afterPath="$PROJECT_DIR$/app/lib/angular/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/app.css" afterPath="$PROJECT_DIR$/app/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/app/css/bootstrap-responsive.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/app/css/bootstrap-responsive.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/bootstrap.css" afterPath="$PROJECT_DIR$/app/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/app/css/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers.js" afterPath="$PROJECT_DIR$/app/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/directives.js" afterPath="$PROJECT_DIR$/app/js/directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/filters.js" afterPath="$PROJECT_DIR$/app/js/filters.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index-async.html" afterPath="$PROJECT_DIR$/app/index-async.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/resources.js" afterPath="$PROJECT_DIR$/app/js/resources.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/script.js" afterPath="$PROJECT_DIR$/app/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/services.js" afterPath="$PROJECT_DIR$/app/js/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/angular/version.txt" afterPath="$PROJECT_DIR$/app/lib/angular/version.txt" />
     </list>
     <ignored path="ng-test-prj.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702227714" ignored="false" />
+    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362782435852" ignored="false" />
     <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702378677" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
     <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702723541" ignored="false" />
@@ -38,7 +59,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="56" selection-start="1362" selection-end="1362" vertical-scroll-proportion="-18.032259">
+            <state line="38" column="56" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,7 +68,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="111" selection-start="785" selection-end="785" vertical-scroll-proportion="0.72131145">
+            <state line="28" column="111" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.72131145">
               <folding />
             </state>
           </provider>
@@ -56,7 +77,7 @@
       <file leaf-file-name="resources.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/resources.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="32" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
+            <state line="37" column="32" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,8 +174,8 @@
     <property name="options.lastSelected" value="settings.nodejs" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="localhost" serverId="6ea43fad-5d39-46e5-b9ca-c3710f6320a2" />
   <component name="RunManager">
@@ -380,9 +401,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="42" selection-end="42" vertical-scroll-proportion="0.051764704">
-          <folding />
-        </state>
+        <state line="2" column="16" selection-start="42" selection-end="42" vertical-scroll-proportion="0.051764704" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/filters.js">
@@ -392,21 +411,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="56" selection-start="1362" selection-end="1362" vertical-scroll-proportion="-18.032259">
+        <state line="38" column="56" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/resources.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="32" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
+        <state line="37" column="32" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="111" selection-start="785" selection-end="785" vertical-scroll-proportion="0.72131145">
+        <state line="28" column="111" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.72131145">
           <folding />
         </state>
       </provider>
