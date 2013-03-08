@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c069cf5-db7e-46b8-ba80-d830a75b704b" name="Default" comment="menu up">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers.js" afterPath="$PROJECT_DIR$/app/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/resources.js" afterPath="$PROJECT_DIR$/app/js/resources.js" />
     </list>
     <ignored path="ng-test-prj.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362652207175" ignored="false" />
-    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362669549005" ignored="false" />
+    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702227714" ignored="false" />
+    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702378677" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
-    <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362667906435" ignored="false" />
+    <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702723541" ignored="false" />
     <file path="/app.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362612683520" ignored="false" />
     <file path="/app.css" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362663109512" ignored="false" />
     <file path="/a.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362666070883" ignored="false" />
@@ -32,19 +35,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="39" selection-start="763" selection-end="763" vertical-scroll-proportion="0.5909646">
+            <state line="38" column="56" selection-start="1362" selection-end="1362" vertical-scroll-proportion="-18.032259">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="19" selection-start="170" selection-end="181" vertical-scroll-proportion="0.0">
+            <state line="28" column="111" selection-start="785" selection-end="785" vertical-scroll-proportion="0.72131145">
               <folding />
             </state>
           </provider>
@@ -53,7 +56,7 @@
       <file leaf-file-name="resources.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/resources.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+            <state line="37" column="32" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,18 +91,18 @@
         <option value="$PROJECT_DIR$/app/js/directives.js" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/js/filters.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/js/controllers.js" />
         <option value="$PROJECT_DIR$/app/js/resources.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -131,7 +134,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -142,103 +145,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-test-prj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -246,23 +153,10 @@
     <property name="options.lastSelected" value="settings.nodejs" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="PublishConfig" serverName="localhost" serverId="6ea43fad-5d39-46e5-b9ca-c3710f6320a2">
-    <servers>
-      <server id="35143ae5-ae1b-45f2-a041-ef6375ffc69c">
-        <serverdata />
-      </server>
-      <server id="6ea43fad-5d39-46e5-b9ca-c3710f6320a2">
-        <serverdata>
-          <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </server>
-    </servers>
-  </component>
+  <component name="PublishConfig" serverName="localhost" serverId="6ea43fad-5d39-46e5-b9ca-c3710f6320a2" />
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
@@ -330,7 +224,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.4978903" order="7" side_tool="false" content_ui="tabs" />
@@ -466,32 +360,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.10501193">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.10501193" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="32" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="7" selection-start="16" selection-end="16" vertical-scroll-proportion="0.025882352">
-          <folding />
-        </state>
+        <state line="1" column="7" selection-start="16" selection-end="16" vertical-scroll-proportion="0.025882352" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="5" selection-start="298" selection-end="298" vertical-scroll-proportion="0.36235294">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="14" column="5" selection-start="298" selection-end="298" vertical-scroll-proportion="0.36235294" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/css/app.css">
@@ -503,30 +387,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/filters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="5" selection-start="10" selection-end="189" vertical-scroll-proportion="0.18117647">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="7" column="5" selection-start="10" selection-end="189" vertical-scroll-proportion="0.18117647" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="56" selection-start="1362" selection-end="1362" vertical-scroll-proportion="-18.032259">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/resources.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+        <state line="37" column="32" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="170" selection-end="181" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="39" selection-start="763" selection-end="763" vertical-scroll-proportion="0.5909646">
+        <state line="28" column="111" selection-start="785" selection-end="785" vertical-scroll-proportion="0.72131145">
           <folding />
         </state>
       </provider>
