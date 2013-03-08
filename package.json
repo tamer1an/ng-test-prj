@@ -1,0 +1,22 @@
+{
+  "name": "ngMenu",
+  "version": "0.0.0",
+  "description": "ngTest",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamer1an/ng-test-prj.git"
+  },
+  "keywords": [
+    "ngMenu"
+  ],
+  "author": "Andrii Trybynenko",
+  "license": "BSD",
+  "gitHead": "138e033177bd556269ecdf88791c7197f4e97916"
+}
