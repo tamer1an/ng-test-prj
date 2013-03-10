@@ -5,37 +5,44 @@ angular.module('menuApp', ['menuAppFilters']);
 
 /* Controllers */
 function MenuCtrl($scope,$location,$window) { //console.log($window.location.pathname);
-// Construct:
-    $scope.active_menu=false;
-    $scope.menus=menus;
+// Construct
+  $scope.menuApp = {"lvl_1" : {"src":[],"active":false},"maxRenderLvl":1};
 
-// URL matching filter
-    angular.forEach($scope.menus, function(value, key){
-        if($scope.menus[key].url == $window.location.pathname)
-            ($scope.active_menu = $scope.menus[key]).active=1;                     
-                    
-        if(!$scope.active_menu && typeof $scope.menus[key].submenu=='object')
-        				angular.forEach($scope.menus[key].submenu, function(v, k){
-        				
-						        if($scope.menus[key].submenu[k].url == $window.location.pathname){
-						            ($scope.active_submenu = $scope.menus[key].submenu[k]).active=1;	      	           
-                  ($scope.active_menu = $scope.menus[key]).active=1;                     
-  				         }
-        				});
-    });
+    angular.forEach(dataSrc,function(v,k){
+      var lvlCounter = 1;
 
-// Scope functions:
-    // ngClick heandler
-    $scope.active = function(menu_lvl) {
-     if(!menu_lvl){
-        $scope.active_menu.active = 0;
-        ($scope.active_menu = $scope.menus[this.$index]).active = 1;
-      }else{
-      		angular.forEach(menu_lvl, function(v, k){ v.active = 0; });        				
-		      menu_lvl[this.$index].active = 1;
-      }
-    };
+     if(v.url == $window.location.pathname)
+        $scope.menuApp.lvl_1.active = k;
+
+      if(typeof v.submenu=='object')
+   
+        this.push(
+         (function getSubLvl(v,lvlCounter,parentIdx){
+            lvlCounter++;
+
+            v['lvl_'+parentIdx+'_'+lvlCounter] = {};
+            v['lvl_'+parentIdx+'_'+lvlCounter].src = v.submenu;
+            v['lvl_'+parentIdx+'_'+lvlCounter].active = false;
+
+            for(var idx in v.submenu){
+                if(v.submenu[idx].url == $window.location.pathname)
+                    v['lvl_'+parentIdx+'_'+lvlCounter].active = idx;
+
+                //console.log('idx -'+idx, v.submenu[idx])
+                if(typeof v.submenu[idx]=='object')
+                    v['lvl_'+parentIdx+'_'+lvlCounter].src.push(getSubLvl(v.submenu[idx],lvlCounter,idx));
+
+                //console.log(lvlCounter)
+            }
+            return v;
+          })(v,lvlCounter,k)
+        );
+
+      else this.push(v);
+
+    },$scope.menuApp.lvl_1.src) 
     
+   console.info($scope.menuApp);
 }  MenuCtrl.$inject = ['$scope','$location','$window'];
 
 

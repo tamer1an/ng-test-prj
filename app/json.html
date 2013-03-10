@@ -28,8 +28,19 @@
 </head>
 <body ng-app="menuApp">
 
+
 <menu ng-controller="MenuCtrl">
+  <pre> 
+    {{menuApp}}
+  </pre>
+</menu>
+
+<!--
+  <menu>
         <ul>
+            <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
+              <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
+            </li>        
             <li ng-repeat="menu in menuApp.lvl_1.src">
               {{ menu.name  }}
             </li>
@@ -37,14 +48,9 @@
         
         <ul>
           <li> </li>
-        </ul>
-</menu>
+        </ul>   
+  </menu>
+-->
 
 </body>
 </html>
-
-<!--
-    <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
-         <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
-    </li>
--->
