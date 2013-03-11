@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/js/controllers.js" line="27" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="4c069cf5-db7e-46b8-ba80-d830a75b704b" name="Default" comment="menu up">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Angular.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Angular.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers.js" afterPath="$PROJECT_DIR$/app/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ng-test-prj.iml" afterPath="$PROJECT_DIR$/.idea/ng-test-prj.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/resources.js" afterPath="$PROJECT_DIR$/app/js/resources.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ng-test-prj.iws" />
@@ -18,7 +10,7 @@
     <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362944696635" ignored="false" />
     <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362702378677" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
-    <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362822420049" ignored="false" />
+    <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362961196296" ignored="false" />
     <file path="/app.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362612683520" ignored="false" />
     <file path="/app.css" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362663109512" ignored="false" />
     <file path="/a.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362666070883" ignored="false" />
@@ -53,7 +45,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.20560747">
+            <state line="8" column="4" selection-start="201" selection-end="201" vertical-scroll-proportion="0.201373">
               <folding />
             </state>
           </provider>
@@ -62,8 +54,10 @@
       <file leaf-file-name="resources.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/resources.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="13" column="22" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1161#1420#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,9 +99,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="1" />
-    <option name="width" value="1578" />
-    <option name="height" value="1038" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -299,13 +294,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="1" width="1578" height="1038" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.4978903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.4978903" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124756336" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10121244" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.50052744" order="11" side_tool="true" content_ui="tabs" />
@@ -385,7 +380,9 @@
     <MESSAGE value="menu up" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/index.html">
@@ -465,6 +462,15 @@
         <state line="7" column="5" selection-start="10" selection-end="189" vertical-scroll-proportion="0.18117647" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/resources.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="22" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1161#1420#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="0" selection-start="975" selection-end="975" vertical-scroll-proportion="-12.419354">
@@ -472,16 +478,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/resources.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.20560747">
+        <state line="8" column="4" selection-start="201" selection-end="201" vertical-scroll-proportion="0.201373">
           <folding />
         </state>
       </provider>
