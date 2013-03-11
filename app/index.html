@@ -5,41 +5,162 @@
   <meta http-equiv="Content-Type" content="text/json; charset=UTF-8">
   <title>Ng menu</title>
 
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css">
-  <!-- Example Data source -->
-  <script type="application/javascript" src="js/resources.js"></script>
+ <style> 
+ /* app css stylesheet */
 
-  <!-- Angular seed -->
-  <script type="application/javascript" src="lib/angular/angular.js"></script>
+/*Menu css setup*/
+menu li { display: inline; }
+.active { background-color: red; }
+ </style>
+<!-- Angular seed -->
+  <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script> 
+ 
+ <!-- Example Data source -->
+ <script> 
+var dataSrc =[
+    {
+        "name": "User",
+        "title":"user",
+        "url":'/ng-test-prj/app/index.html',
+//        "renderLevel":2,
+        "submenu": [{
+            "name": "Add User",
+            "title":"Add user",
+            "url":'#'
+        },{
+            "name": "Edit User",
+            "title":"Edit user",
+            "url":'#'
+        }]
+    },{
+        "name": "Video",
+        "title":"video",
+        "url":'#'
+        },{
+        "name": "Player",
+        "title":"player",
+        "url":'#',
+//        "renderLevel":3,
+        "submenu": [{
+            "name": "Add Player",
+            "title":"Add Player",
+            "url":'/ng-test-prj/app/',
+            "submenu": [{
+              "name": "Add subPlayer",
+              "title":"Add subPlayer",
+              "url":'#'
+            },{
+              "name": "Edit subPlayer",
+              "title":"Edit subPlayer",
+              "url":'#'
+            }]
+        },{
+            "name": "Edit Player",
+            "title":"Edit Player",
+            "url":'#',
+            "submenu": [{
+                "name": "Add _subPlayer",
+                "title":"Add _subPlayer",
+                "url":'#'
+              },{
+                "name": "Edit _subPlayer",
+                "title":"Edit _subPlayer",
+                "url":'#'
+              }]
+        }]
+    },{
+        "name": "Playlist",
+        "title":"Playlist",
+        "url":'#'
+    },{
+        "name": "User-Account",
+        "title":"user-account",
+        "url":'#'
+    }
+]; 
+ </script>
+  
 
-    <!--[if lt IE 9]>
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>-->
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
-    <!--<script src="//code.jquery.com/jquery-2.0.0b2.js"></script>-->
-    <!--<![endif]-->
+  <script>
+			'use strict';
 
-  <!-- Angular App functionality -->
-  <script type="application/javascript" src="js/controllers.js"></script>
+		/* App Module */
+		angular.module('menuApp', ['menuAppFilters']);
 
-  <!-- Base javascript  -->
-  <!--<script src="js/script.js"></script>-->
+		/* Controllers */
+		function MenuCtrl($scope,$location,$window) { //console.log($window.location.pathname);
+		  // Construct
+
+		  $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0};
+
+			angular.forEach(dataSrc,function(v,k){
+			  var lvlCounter = 0;
+			  v.itemLvl = lvlCounter;
+			  v.itemIdx = k;
+
+		//     if(v.url == $window.location.pathname)
+		//        $scope.menuApp.lvl_1.active = k;
+
+			  if(typeof v.submenu=='object'){
+				this.push(
+				 (function getSubLvl(v,lvlCounter,parentIdx){
+					var tmpContainer = false;
+					lvlCounter++;
+
+					for(var idx in v.submenu){
+		//              if(v.submenu[idx].url == $window.location.pathname)
+		//                 v['lvl_'+lvlCounter+'_'+parentIdx].active = idx;
+
+						v.submenu[idx].itemLvl = lvlCounter;
+						v.submenu[idx].itemIdx = parseInt(idx);
+
+						if(typeof v.submenu[idx].submenu=='object'){
+							lvlCounter++;
+
+							tmpContainer = v.submenu[idx].submenu;
+							v.submenu[idx].submenu = [];
+
+							for(var index in tmpContainer){
+								tmpContainer[index].itemLvl=lvlCounter;
+								tmpContainer[index].itemIdx=parseInt(index);
+								v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
+							}
+							tmpContainer = false;
+						}
+					} // for in submenu
+					return v;
+
+				  })(v,lvlCounter,k) // getSubLvl
+				);  // push
+
+			  } else {
+				  this.push(v);
+			  }
+
+			},$scope.menuApp.src) //ngForEach
+			console.info($scope.menuApp);
+		}  MenuCtrl.$inject = ['$scope','$location','$window'];
+
+		/* Filters */
+		angular.module('menuAppFilters', []).filter('active', function() {
+			return function(input) {
+				return input ? 'active' : '';
+			};
+		});
+  </script>
 </head>
 <body ng-app="menuApp">
-
-<menu ng-controller="MenuCtrl">
-        <ul>
-            <li ng-repeat="menu in menuApp.lvl_1.src">
-              {{ menu.name  }}
-            </li>
-        </ul>     
-        
-        <ul>
-          <li> </li>
-        </ul>
-</menu>
-
+	<menu ng-controller="MenuCtrl">
+			<ul>
+				<li ng-repeat="menu in menuApp.src">
+				  {{ menu.name  }}
+				</li>
+			</ul>     
+			
+			<ul>
+			  <li> </li>
+			</ul>
+	</menu>
 </body>
 </html>
 
