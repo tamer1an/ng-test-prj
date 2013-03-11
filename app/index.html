@@ -69,7 +69,25 @@ var dataSrc =[
               },{
                 "name": "Edit _subPlayer",
                 "title":"Edit _subPlayer",
-                "url":'#'
+                "url":'#',
+                "submenu": [{
+                    "name": "Add _subPlayer",
+                    "title":"Add _subPlayer",
+                    "url":'#',
+                    "submenu": [{
+                        "name": "Add _subPlayer",
+                        "title":"Add _subPlayer",
+                        "url":'#'
+                    },{
+                        "name": "Edit _subPlayer",
+                        "title":"Edit _subPlayer",
+                        "url":'#'
+                    }]
+                },{
+                    "name": "Edit _subPlayer",
+                    "title":"Edit _subPlayer",
+                    "url":'#'
+                }]
               }]
         }]
     },{
@@ -99,8 +117,11 @@ var dataSrc =[
                     arguments[0].item.itemLvl = arguments[0].lvlCounter;
                     arguments[0].item.itemIdx = parseInt(arguments[0].idx);
 
-                    if (typeof  arguments[0].parent !== 'undefined' )
+                    if (typeof  arguments[0].parent !== 'undefined')
                         arguments[0].item.itemParentIdx = arguments[0].parent;
+
+                    if (typeof  arguments[0].fullPath !== 'undefined')
+                        arguments[0].item.fullPath = arguments[0].fullPath;
                 }
                 //TODO: Bind active menu parsing urls
                 //TODO: made recursive menu activation
@@ -118,38 +139,54 @@ var dataSrc =[
             $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0};
 
             angular.forEach(dataSrc,function(v,k){
-                var lvlCounter = 0;
+                var lvlCounter = 0,
+                    fullPath="";
+
                 addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k });
 
-                if(typeof v.submenu=='object'){
+                if(typeof v.submenu=='object')
                     this.push(
-                            (function getSubLvl(v,lvlCounter,parentIdx){
-                                var tmpContainer = false;
-                                lvlCounter++;
+                     (function getSubLvl(v,lvlCounter,parentIdx){
+//                       fullPath += parentIdx+"_";
+                         var tmpContainer = false //, tmpFullPath;
+//                       console.dir(fullPath,parentIdx)
 
-                                for(var idx in v.submenu){
-                                    addMenuParams({ "item":v.submenu[idx] ,"lvlCounter": lvlCounter,  "idx": idx, "parent": k });
-                                    if(typeof v.submenu[idx].submenu=='object'){
-                                        lvlCounter++;
+                         lvlCounter++;
+                         for(var idx in v.submenu){
+//                           tmpFullPath = fullPath+idx+"_";
 
-                                        tmpContainer = v.submenu[idx].submenu;
-                                        v.submenu[idx].submenu = [];
+                             addMenuParams({
+                                 "item":v.submenu[idx]
+                                 ,"lvlCounter": lvlCounter
+                                 ,"idx": idx
+                                 ,"parent": k
+//                                 ,"fullPath": tmpFullPath
+                             });
+                             if(typeof v.submenu[idx].submenu=='object'){
+                                 lvlCounter++;
 
-                                        for(var index in tmpContainer){
-                                            addMenuParams({"item":tmpContainer[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx });
-                                            v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
-                                        }
-                                        tmpContainer = false;
-                                    }
-                                } // for in submenu
-                                return v;
+                                 tmpContainer = v.submenu[idx].submenu;
+                                 v.submenu[idx].submenu = [];
 
-                            })(v,lvlCounter,k) // getSubLvl
+                                 for(var index in tmpContainer){
+
+                                     addMenuParams({
+                                         "item":tmpContainer[index],
+                                         "lvlCounter": lvlCounter,
+                                         "idx": index,
+                                         "parent": idx
+//                                         , "fullPath": tmpFullPath+index
+                                     });
+                                     v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
+                                 }
+                                 tmpContainer = false; //fullPath="";
+                             }
+                         } // for in submenu
+                         return v;
+                     })(v,lvlCounter,k) // getSubLvl
                     );  // push
-
-                } else {
+                else
                     this.push(v);
-                }
 
             },$scope.menuApp.src); //ngForEach
             console.info($scope.menuApp);
@@ -168,7 +205,7 @@ var dataSrc =[
 	<menu ng-controller="MenuCtrl">
 			<ul>
 				<li ng-repeat="menu in menuApp.src">
-				    <a href="{{ menu.url }}">  {{ menu.name  }} </a>
+				    <a>  {{ menu.name  }} </a>
 				</li>
 			</ul>     
 
