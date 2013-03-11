@@ -13,7 +13,7 @@ menu li { display: inline; }
 .active { background-color: red; }
  </style>
 <!-- Angular seed -->
-  <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script> 
+  <script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
  
  <!-- Example Data source -->
  <script> 
@@ -89,8 +89,12 @@ var dataSrc =[
 
 		/* Controllers */
 		function MenuCtrl($scope,$location,$window) { //console.log($window.location.pathname);
-		  // Construct
+            function addMenuParams(item,lvlCounter,idx){
+                item.itemLvl = lvlCounter;
+                item.itemIdx = parseInt(idx);
+            }
 
+		  // Construct
 		  $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0};
 
 			angular.forEach(dataSrc,function(v,k){
@@ -111,8 +115,7 @@ var dataSrc =[
 		//              if(v.submenu[idx].url == $window.location.pathname)
 		//                 v['lvl_'+lvlCounter+'_'+parentIdx].active = idx;
 
-						v.submenu[idx].itemLvl = lvlCounter;
-						v.submenu[idx].itemIdx = parseInt(idx);
+                        addMenuParams(v.submenu[idx],lvlCounter,idx);
 
 						if(typeof v.submenu[idx].submenu=='object'){
 							lvlCounter++;
@@ -121,8 +124,7 @@ var dataSrc =[
 							v.submenu[idx].submenu = [];
 
 							for(var index in tmpContainer){
-								tmpContainer[index].itemLvl=lvlCounter;
-								tmpContainer[index].itemIdx=parseInt(index);
+                                addMenuParams(tmpContainer[index],lvlCounter,index);
 								v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
 							}
 							tmpContainer = false;
