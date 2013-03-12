@@ -118,8 +118,9 @@ var dataSrc =[
 
                     if (typeof  arguments[0].parent !== 'undefined')
                         arguments[0].item.itemParentIdx = parseInt(arguments[0].parent);
-//                  if (typeof  arguments[0].fullPath !== 'undefined')
-//                      arguments[0].item.fullPath = arguments[0].fullPath;
+
+                    if (typeof  arguments[0].fullPath !== 'undefined')
+                        arguments[0].item.fullPath = arguments[0].fullPath;
                 }
 
                 //TODO: Bind active menu parsing urls
@@ -138,21 +139,20 @@ var dataSrc =[
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
-                addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k });
+                addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k, "fullPath":k });
 
                 if(typeof v.submenu=='object')
-                    this.push(
+                   this.push(
                      (function getSubLvl(v,lvlCounter,parentIdx){
                          lvlCounter++;
                          for(var idx in v.submenu){
-                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k });
+                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+"_"+idx});
 
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
-
                                  for(var index in v.submenu[idx].submenu){
-                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx });
-                                     v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,index);
+                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+"_"+idx+"_"+index });
+                                     v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,parentIdx+"_"+idx+"_"+index);
                                  }
                              }
                          } // for in submenu
