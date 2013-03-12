@@ -23,6 +23,7 @@ menu li { display: inline; }
  <script> 
 var dataSrc =[
     {
+        "activeIdx":2,
         "name": "User",
         "title":"user",
         "url":'/ng-test-prj/app/index.html',
@@ -48,11 +49,11 @@ var dataSrc =[
         "submenu": [{
             "name": "Add Player",
             "title":"Add Player",
-            "url":'/ng-test-prj/app/',
+            "url":'#',
             "submenu": [{
               "name": "Add subPlayer",
               "title":"Add subPlayer",
-              "url":'#'
+              "url":'/ng-test-prj/app/'
             },{
               "name": "Edit subPlayer",
               "title":"Edit subPlayer",
@@ -103,7 +104,7 @@ var dataSrc =[
  </script>
 
 
-  <script>
+  <script>           //TODO: made recursive menu activation
         'use strict';
         /* App Module */
         angular.module('menuApp', ['menuAppFilters']);
@@ -122,16 +123,13 @@ var dataSrc =[
                     if (typeof  arguments[0].fullPath !== 'undefined')
                         arguments[0].item.fullPath = arguments[0].fullPath;
                 }
+            }
 
-                //TODO: Bind active menu parsing urls
-                //TODO: made recursive menu activation
-                // 1 lvl
-                //   if(v.url == $window.location.pathname)
-                //     $scope.menuApp.lvl_1.active = k;
-
-                // 2 lvl
-                //   if(v.submenu[idx].url == $window.location.pathname)
-                //     v['lvl_'+lvlCounter+'_'+parentIdx].active = idx;
+            function checkMenuURl(v,itemLvl) {
+               if(v.url == $window.location.pathname){
+                   itemLvl.active = v;
+                   itemLvl.activeIdx = v.itemIdx;
+               }
             }
 
             // Construct
@@ -140,6 +138,7 @@ var dataSrc =[
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
                 addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k, "fullPath":k });
+                checkMenuURl(v, $scope.menuApp);
 
                 if(typeof v.submenu=='object')
                    this.push(
@@ -147,15 +146,18 @@ var dataSrc =[
                          lvlCounter++;
                          for(var idx in v.submenu){
                              addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+"_"+idx});
+                             checkMenuURl(v.submenu[idx], v);
 
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
                                  for(var index in v.submenu[idx].submenu){
                                      addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+"_"+idx+"_"+index });
+                                     checkMenuURl(v.submenu[idx].submenu[index], v.submenu[idx]);
+
                                      v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,parentIdx+"_"+idx+"_"+index);
                                  }
                              }
-                         } // for in submenu
+                         }
                          return v;
                      })(v,lvlCounter,k) // getSubLvl
                     );  // push
@@ -178,14 +180,15 @@ var dataSrc =[
 
 	<menu ng-controller="MenuCtrl">
 			<ul>
-				<li ng-repeat="menu in menuApp.src">
-				    <a>  {{ menu.name  }} </a>
-				</li>
+		      <li ng-repeat="menu in menuApp.src" class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}">
+			    <a>  {{ menu.name }} </a>
+			  </li>
 			</ul>     
 
-
-			<ul>
-			  <li> </li>
+			<ul ng-hide="!menuApp.active && menuApp.active.submenu">
+			  <li ng-repeat="submenu in menuApp.active.submenu" class="{{(submenu.itemIdx==menuApp.active.itemIdx) | active}}">
+                  <a>  {{ submenu.name }} </a>
+			  </li>
 			</ul>
 	</menu>
 
