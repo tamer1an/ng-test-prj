@@ -113,11 +113,11 @@ var dataSrc =[
 
             function addMenuParams(){ // console.log(arguments[0]);
                 if(typeof arguments[0] == "object") {
-                    arguments[0].item.itemLvl = arguments[0].lvlCounter;
+                    arguments[0].item.itemLvl = parseInt(arguments[0].lvlCounter);
                     arguments[0].item.itemIdx = parseInt(arguments[0].idx);
 
                     if (typeof  arguments[0].parent !== 'undefined')
-                        arguments[0].item.itemParentIdx = arguments[0].parent;
+                        arguments[0].item.itemParentIdx = parseInt(arguments[0].parent);
 //                  if (typeof  arguments[0].fullPath !== 'undefined')
 //                      arguments[0].item.fullPath = arguments[0].fullPath;
                 }
@@ -138,39 +138,22 @@ var dataSrc =[
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
-
                 addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k });
 
                 if(typeof v.submenu=='object')
                     this.push(
                      (function getSubLvl(v,lvlCounter,parentIdx){
-                         var tmpContainer = false;
-
                          lvlCounter++;
                          for(var idx in v.submenu){
-                             addMenuParams({
-                                 "item":v.submenu[idx]
-                                 ,"lvlCounter": lvlCounter
-                                 ,"idx": idx
-                                 ,"parent": k
-                             });
+                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k });
+
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
 
-                                 tmpContainer = v.submenu[idx].submenu;
-                                 v.submenu[idx].submenu = [];
-
-                                 for(var index in tmpContainer){
-                                     addMenuParams({
-                                         "item":tmpContainer[index],
-                                         "lvlCounter": lvlCounter,
-                                         "idx": index,
-                                         "parent": idx
-                                     });
-
-                                     v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
+                                 for(var index in v.submenu[idx].submenu){
+                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx });
+                                     v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,index);
                                  }
-                                 tmpContainer = false;
                              }
                          } // for in submenu
                          return v;
