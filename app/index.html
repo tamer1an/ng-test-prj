@@ -17,8 +17,7 @@ menu li { display: inline; }
      }
  </style>
 <!-- Angular seed -->
-  <script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
- 
+  <script type="application/javascript" src="lib/angular/angular.js"></script>	
  <!-- Example Data source -->
  <script> 
 var dataSrc =[
@@ -169,12 +168,29 @@ var dataSrc =[
 
         }  MenuCtrl.$inject = ['$scope','$location','$window'];
 
+
+
+
         /* Filters */
         angular.module('menuAppFilters', []).filter('active', function() {
             return function(input) {
                 return input ? 'active' : '';
             };
+        }).filter('parentLvl', function(){
+
+            return function(item){
+                console.group('itm',item);
+
+                console.log('this',this);
+                console.log('parent',this.$parent);
+                console.log('app',this.$parent.menuApp);
+                console.groupEnd('win',window);
+
+				return false;
+            };
         });
+
+
   </script>
 </head>
 <body ng-app="menuApp">
@@ -193,16 +209,21 @@ var dataSrc =[
                 </li>
             </ul>
 
+        <!--<ul ng-repeat="lvl in renderLvl">-->
+
+
             <ul ng-repeat="lvl in renderLvl"
-                ng-init="
-                    src=src[splitPath[0]].submenu;
+                ng-init="src=src[splitPath[0]].submenu;
                 ">
 
-                <li ng-repeat="menu in src">
-                     {{ menu.name }}
+                <li ng-repeat="menu in src | parentLvl">
+                <!--<li ng-repeat="menu in src">-->
+
+                         {{ src.length }}
                 </li>
+
             </ul>
-        {{ counter }}
+        <!--{{ counter }}-->
     </menu>
 
 </body>
