@@ -111,7 +111,7 @@ var dataSrc =[
 
         /* Controllers */
         function MenuCtrl($scope,$location,$window) {
-            $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0,"fullActivePath":false};
+            $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0,"fullActivePath":"0-"};
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
@@ -123,13 +123,13 @@ var dataSrc =[
                      (function getSubLvl(v,lvlCounter,parentIdx){
                          lvlCounter++;
                          for(var idx in v.submenu){
-                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+"_"+idx});
+                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+"-"+idx});
                              checkMenuURl(v.submenu[idx], v);
 
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
                                  for(var index in v.submenu[idx].submenu){
-                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+"_"+idx+"_"+index });
+                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+"-"+idx+"_"+index });
                                      checkMenuURl(v.submenu[idx].submenu[index], v.submenu[idx]);
 
                                      v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,parentIdx+"_"+idx+"_"+index);
@@ -179,26 +179,57 @@ var dataSrc =[
 </head>
 <body ng-app="menuApp">
 
-	<menu ng-controller="MenuCtrl">
+	<menu ng-controller="MenuCtrl"
+          ng-init="
+	        splitPath = menuApp.fullActivePath.split('-');
+	        renderLvl = splitPath[1].split('_');
+	        src = menuApp.src;
+	        counter = renderLvl.length;
+	      ">
 
-			<ul>
-		      <li ng-repeat="menu in menuApp.src" class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}">
-			    <a>  {{ menu.name }} </a>
-			  </li>
-			</ul>     
+            <ul>
+                <li ng-repeat="menu in src">
+                     {{ menu.name }}
+                </li>
+            </ul>
 
-			<ul ng-hide="!menuApp.active && menuApp.active.submenu">
-			  <li ng-repeat="submenu in menuApp.active.submenu" class="{{(submenu.itemIdx==menuApp.active.itemIdx) | active}}">
-                  <a>  {{ submenu.name }} </a>
-			  </li>
-			</ul>
+            <ul ng-repeat="lvl in renderLvl"
+                ng-init="
+                    src=src[splitPath[0]].submenu;
+                ">
 
-	</menu>
+                <li ng-repeat="menu in src">
+                     {{ menu.name }}
+                </li>
+            </ul>
+        {{ counter }}
+    </menu>
 
-    <!--
-        <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
-             <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
-        </li>
-    -->
 </body>
 </html>
+
+<!-- =====-------------------------------------------------------------==== -->
+<!--<ul ng-repeat="lvl in renderLvl" ng-init="src=src[splitPath[0]].submenu;">-->
+<!--<li ng-repeat="menu in src" ng-init="src=src[renderLvl[1]].submenu;">-->
+<!--{{ menu.name }}-->
+<!--</li>-->
+<!--</ul>-->
+
+<!-- =====---------------------------------------------====== -->
+<!--<ul>-->
+<!--<li ng-repeat="menu in menuApp.src" class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}">-->
+<!--<a>  {{ menu.name }} </a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul ng-hide="!menuApp.active && menuApp.active.submenu">-->
+<!--<li ng-repeat="submenu in menuApp.active.submenu" class="{{(submenu.itemIdx==menuApp.active.itemIdx) | active}}">-->
+<!--<a>  {{ submenu.name }} </a>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!-- =====--------------------------------------------------------===== -->
+<!--
+    <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
+         <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
+    </li>
+-->
