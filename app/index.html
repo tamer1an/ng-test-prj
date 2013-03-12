@@ -105,7 +105,6 @@ var dataSrc =[
 
   <script>
         'use strict';
-
         /* App Module */
         angular.module('menuApp', ['menuAppFilters']);
 
@@ -119,13 +118,12 @@ var dataSrc =[
 
                     if (typeof  arguments[0].parent !== 'undefined')
                         arguments[0].item.itemParentIdx = arguments[0].parent;
-
-                    if (typeof  arguments[0].fullPath !== 'undefined')
-                        arguments[0].item.fullPath = arguments[0].fullPath;
+//                  if (typeof  arguments[0].fullPath !== 'undefined')
+//                      arguments[0].item.fullPath = arguments[0].fullPath;
                 }
+
                 //TODO: Bind active menu parsing urls
                 //TODO: made recursive menu activation
-
                 // 1 lvl
                 //   if(v.url == $window.location.pathname)
                 //     $scope.menuApp.lvl_1.active = k;
@@ -139,31 +137,22 @@ var dataSrc =[
             $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0};
 
             angular.forEach(dataSrc,function(v,k){
-                var lvlCounter = 0,
-                    fullPath=[];
+                var lvlCounter = 0;
 
                 addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k });
 
                 if(typeof v.submenu=='object')
                     this.push(
                      (function getSubLvl(v,lvlCounter,parentIdx){
-                         fullPath[parentIdx]=[];
-
                          var tmpContainer = false;
 
                          lvlCounter++;
                          for(var idx in v.submenu){
-//                             console.log(fullPath[parentIdx])
-
-                           if(typeof  fullPath[parentIdx] == 'object')
-                                fullPath[parentIdx][parseInt(idx)]=[];
-
                              addMenuParams({
                                  "item":v.submenu[idx]
                                  ,"lvlCounter": lvlCounter
                                  ,"idx": idx
                                  ,"parent": k
-//                                 ,"fullPath": tmpFullPath
                              });
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
@@ -172,21 +161,16 @@ var dataSrc =[
                                  v.submenu[idx].submenu = [];
 
                                  for(var index in tmpContainer){
-
                                      addMenuParams({
                                          "item":tmpContainer[index],
                                          "lvlCounter": lvlCounter,
                                          "idx": index,
                                          "parent": idx
-//                                         , "fullPath": tmpFullPath+index
                                      });
-
-//                                     if(typeof  fullPath[parentIdx] == 'object')
-//                                         fullPath[parentIdx][parseInt(idx)]=[];
 
                                      v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
                                  }
-                                 tmpContainer = false; fullPath="";
+                                 tmpContainer = false;
                              }
                          } // for in submenu
                          return v;
