@@ -140,22 +140,24 @@ var dataSrc =[
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0,
-                    fullPath="";
+                    fullPath=[];
 
                 addMenuParams({"item":  v, "lvlCounter": lvlCounter, "idx": k });
 
                 if(typeof v.submenu=='object')
                     this.push(
                      (function getSubLvl(v,lvlCounter,parentIdx){
-                       fullPath += parentIdx+"_";
+                         fullPath[parentIdx]=[];
 
-                         var tmpContainer = false //, tmpFullPath;
-                         console.error(lvlCounter,fullPath)
+                         var tmpContainer = false;
 
                          lvlCounter++;
                          for(var idx in v.submenu){
-//                           tmpFullPath = fullPath+idx+"_";
-                             console.warn(lvlCounter,fullPath)
+//                             console.log(fullPath[parentIdx])
+
+                           if(typeof  fullPath[parentIdx] == 'object')
+                                fullPath[parentIdx][parseInt(idx)]=[];
+
                              addMenuParams({
                                  "item":v.submenu[idx]
                                  ,"lvlCounter": lvlCounter
@@ -179,7 +181,9 @@ var dataSrc =[
 //                                         , "fullPath": tmpFullPath+index
                                      });
 
-                                     console.log(lvlCounter,fullPath)
+//                                     if(typeof  fullPath[parentIdx] == 'object')
+//                                         fullPath[parentIdx][parseInt(idx)]=[];
+
                                      v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
                                  }
                                  tmpContainer = false; fullPath="";

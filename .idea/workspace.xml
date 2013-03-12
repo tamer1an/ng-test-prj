@@ -6,8 +6,8 @@
     </list>
     <ignored path="ng-test-prj.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363034507107" ignored="false" />
-    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363046069621" ignored="false" />
+    <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363090774101" ignored="false" />
+    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363092134782" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
     <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362961196296" ignored="false" />
     <file path="/app.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362612683520" ignored="false" />
@@ -35,7 +35,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="78" selection-start="5078" selection-end="5078" vertical-scroll-proportion="4.2116528">
+            <state line="155" column="0" selection-start="4674" selection-end="4737" vertical-scroll-proportion="0.19543147">
               <folding />
             </state>
           </provider>
@@ -78,10 +78,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -179,16 +178,19 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="LOCAL" serverId="2c5edf04-48e6-4585-b07f-fa9f8829c460">
     <servers>
-      <server id="2c5edf04-48e6-4585-b07f-fa9f8829c460">
+      <server id="35143ae5-ae1b-45f2-a041-ef6375ffc69c">
+        <serverdata />
+      </server>
+      <server id="6ea43fad-5d39-46e5-b9ca-c3710f6320a2">
         <serverdata />
       </server>
     </servers>
@@ -290,20 +292,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="960" y="0" width="960" height="1032" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.4978903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.4978903" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10068529" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2078346" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.50052744" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="101" y="101" width="1718" height="838" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -467,14 +469,12 @@
     </entry>
     <entry file="file://$USER_HOME$/.WebStorm6/system/extLibs/nodejs-v0.8.19-src/core-modules-sources/lib/cluster.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.025229357">
-          <folding />
-        </state>
+        <state line="34" column="62" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.025229357" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="78" selection-start="5078" selection-end="5078" vertical-scroll-proportion="4.2116528">
+        <state line="155" column="0" selection-start="4674" selection-end="4737" vertical-scroll-proportion="0.19543147">
           <folding />
         </state>
       </provider>
