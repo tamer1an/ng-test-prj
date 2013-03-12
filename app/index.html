@@ -104,36 +104,14 @@ var dataSrc =[
  </script>
 
 
-  <script>           //TODO: made recursive menu activation
+  <script>
         'use strict';
         /* App Module */
         angular.module('menuApp', ['menuAppFilters']);
 
         /* Controllers */
-        function MenuCtrl($scope,$location,$window) { //console.log($window.location.pathname);
-
-            function addMenuParams(){ // console.log(arguments[0]);
-                if(typeof arguments[0] == "object") {
-                    arguments[0].item.itemLvl = parseInt(arguments[0].lvlCounter);
-                    arguments[0].item.itemIdx = parseInt(arguments[0].idx);
-
-                    if (typeof  arguments[0].parent !== 'undefined')
-                        arguments[0].item.itemParentIdx = parseInt(arguments[0].parent);
-
-                    if (typeof  arguments[0].fullPath !== 'undefined')
-                        arguments[0].item.fullPath = arguments[0].fullPath;
-                }
-            }
-
-            function checkMenuURl(v,itemLvl) {
-               if(v.url == $window.location.pathname){
-                   itemLvl.active = v;
-                   itemLvl.activeIdx = v.itemIdx;
-               }
-            }
-
-            // Construct
-            $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0};
+        function MenuCtrl($scope,$location,$window) {
+            $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0,"fullActivePath":false};
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
@@ -159,13 +137,36 @@ var dataSrc =[
                              }
                          }
                          return v;
-                     })(v,lvlCounter,k) // getSubLvl
+                     })(v,lvlCounter,k) // recursive getSubLvl
                     );  // push
                 else
                     this.push(v);
 
             },$scope.menuApp.src); //ngForEach
+
             console.info($scope.menuApp);
+
+            function addMenuParams(){ // console.log(arguments[0]);
+                if(typeof arguments[0] == "object") {
+                    arguments[0].item.itemLvl = parseInt(arguments[0].lvlCounter);
+                    arguments[0].item.itemIdx = parseInt(arguments[0].idx);
+
+                    if (typeof  arguments[0].parent !== 'undefined')
+                        arguments[0].item.itemParentIdx = parseInt(arguments[0].parent);
+
+                    if (typeof  arguments[0].fullPath !== 'undefined')
+                        arguments[0].item.fullPath = arguments[0].fullPath;
+                }
+            }
+
+            function checkMenuURl(v,itemLvl) {
+                if(v.url == $window.location.pathname){
+                    itemLvl.active = v;
+                    itemLvl.activeIdx = v.itemIdx;
+                    $scope.menuApp.fullActivePath = v.fullPath;
+                }
+            }
+
         }  MenuCtrl.$inject = ['$scope','$location','$window'];
 
         /* Filters */
@@ -179,6 +180,7 @@ var dataSrc =[
 <body ng-app="menuApp">
 
 	<menu ng-controller="MenuCtrl">
+
 			<ul>
 		      <li ng-repeat="menu in menuApp.src" class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}">
 			    <a>  {{ menu.name }} </a>
@@ -190,6 +192,7 @@ var dataSrc =[
                   <a>  {{ submenu.name }} </a>
 			  </li>
 			</ul>
+
 	</menu>
 
     <!--
