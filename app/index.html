@@ -101,7 +101,7 @@ var dataSrc =[
     }
 ]; 
  </script>
-  
+
 
   <script>
         'use strict';
@@ -147,14 +147,15 @@ var dataSrc =[
                 if(typeof v.submenu=='object')
                     this.push(
                      (function getSubLvl(v,lvlCounter,parentIdx){
-//                       fullPath += parentIdx+"_";
+                       fullPath += parentIdx+"_";
+
                          var tmpContainer = false //, tmpFullPath;
-//                       console.dir(fullPath,parentIdx)
+                         console.error(lvlCounter,fullPath)
 
                          lvlCounter++;
                          for(var idx in v.submenu){
 //                           tmpFullPath = fullPath+idx+"_";
-
+                             console.warn(lvlCounter,fullPath)
                              addMenuParams({
                                  "item":v.submenu[idx]
                                  ,"lvlCounter": lvlCounter
@@ -177,9 +178,11 @@ var dataSrc =[
                                          "parent": idx
 //                                         , "fullPath": tmpFullPath+index
                                      });
+
+                                     console.log(lvlCounter,fullPath)
                                      v.submenu[idx].submenu.push(getSubLvl(tmpContainer[index],lvlCounter,index));
                                  }
-                                 tmpContainer = false; //fullPath="";
+                                 tmpContainer = false; fullPath="";
                              }
                          } // for in submenu
                          return v;
