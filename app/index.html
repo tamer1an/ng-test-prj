@@ -6,20 +6,16 @@
   <title>Ng menu</title>
 
  <style> 
- /* app css stylesheet */
-
-/*Menu css setup*/
-menu li { display: inline; }
-.active { background-color: red; }
-
-     a {
-         text-decoration: none;
-     }
+  /*Menu css setup*/
+    menu li { display: inline; }
+    .active { background-color: red; }
+    a { text-decoration: none; }
  </style>
-<!-- Angular seed -->
+
+  <!-- Angular seed -->
   <script type="application/javascript" src="lib/angular/angular.js"></script>	
- <!-- Example Data source -->
- <script> 
+
+<script>  // Example Data source
 var dataSrc =[
     {
         "activeIdx":2,
@@ -103,7 +99,7 @@ var dataSrc =[
  </script>
 
 
-  <script>
+<script>
         'use strict';
         /* App Module */
         angular.module('menuApp', ['menuAppFilters']);
@@ -170,64 +166,37 @@ var dataSrc =[
         }  MenuCtrl.$inject = ['$scope','$window','$location'];
 
 
-
-
         /* Filters */
-        angular.module('menuAppFilters', []).filter('active', function() {
+        angular.module('menuAppFilters', [])
+        .filter('active', function() {
             return function(input) {
                 return input ? 'active' : '';
             };
         }).filter('parentLvl', function(){
-
             return function(item){
-//                console.group();
-//                    console.warn('itm',item);
-//                    console.warn('this',this);
-//                    console.warn('parent',this.$parent);
-//                    console.warn('lvlItemsSize',this.$parent.lvlItemsSize);
-//                    console.warn('app',this.$parent.menuApp);
-//                console.groupEnd();
-
-
-//                splitPath = menuApp.fullActivePath.split('-');
-//                renderLvl = splitPath[1].split('_');
-//                src = menuApp.src;
-//                counter = renderLvl.length;
-
                 this.$parent.lvlItemsSize--;
-
                 return item;
             };
-
         }).filter('lvlRender', function(){
-
             return function(item){
-//                console.group();
-//                    console.log('itm',item);
-//                    console.log('this',this);
-//                    console.log('parent',this.$parent);
-//                    console.log('app',this.$parent.menuApp);
-//                console.groupEnd();
+              /*
+                  console.group();
+                        console.log('itm',item);
+                        console.log('this',this);
+                        console.log('parent',this.$parent);
+                        console.log('app',this.$parent.menuApp);
+                    console.groupEnd();
+              */
 
+              /*
                 if (this.$parent.lvlItemsSize == 0 && this.$parent.renderLvl.length>0){
                     console.log('if',this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]].submenu);
-
-//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]].submenu;
-
-//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[]];
-//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]];
+                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]].submenu;
                 }
-
-//                splitPath = menuApp.fullActivePath.split('-');
-//                renderLvl = splitPath[1].split('_');
-//                src = menuApp.src;
-//                counter = renderLvl.length;
-
+             */
 				return item;
             };
         });
-
-
   </script>
 </head>
 <body ng-app="menuApp">
@@ -248,96 +217,11 @@ var dataSrc =[
                 {{ lvl }}
             </ul>
 
-
-        <!--"{{(menu.itemIdx==menuApp.active.itemIdx) | active}}"-->
     </menu>
-
-
-    <!--<menu ng-controller="MenuCtrl"-->
-        <!--ng-init="-->
-        <!--splitPath = menuApp.fullActivePath.split('_');-->
-        <!--renderLvl = splitPath[1].split('_');-->
-        <!--src = menuApp.submenu;-->
-        <!--counter = renderLvl.length;">-->
-
-        <!--<ul>-->
-            <!--<li ng-repeat="menu in src">-->
-                <!--{{ menu.name }}-->
-            <!--</li>-->
-        <!--</ul>-->
-
-        <!--<ul ng-repeat="lvl in renderLvl">-->
-
-
-        <!--<ul ng-repeat="lvl in renderLvl"-->
-             <!--ng-init="src=src[splitPath[0]].submenu;-->
-        <!--">-->
-
-        <!--<li ng-repeat="menu in src | parentLvl">-->
-         <!--{{ src.length }}-->
-        <!--</li>-->
-
-        <!--</ul>-->
-        <!--&lt;!&ndash;{{ counter }}&ndash;&gt;-->
-    <!--</menu>-->
 
 </body>
 </html>
 
-<!-- =====-------------------------------------------------------------==== -->
-<!--<menu ng-controller="MenuCtrl"-->
-      <!--ng-init="-->
-	        <!--splitPath = menuApp.fullActivePath.split('-');-->
-	        <!--renderLvl = splitPath[1].split('_');-->
-	        <!--src = menuApp.src;-->
-	        <!--counter = renderLvl.length;-->
-	      <!--">-->
-
-    <!--<ul>-->
-        <!--<li ng-repeat="menu in src">-->
-            <!--{{ menu.name }}-->
-        <!--</li>-->
-    <!--</ul>-->
-
-    <!--<ul ng-repeat="lvl in renderLvl">-->
-
-
-    <!--<ul ng-repeat="lvl in renderLvl"-->
-        <!--ng-init="src=src[splitPath[0]].submenu;-->
-                <!--">-->
-
-        <!--<li ng-repeat="menu in src | parentLvl">-->
-            <!--<li ng-repeat="menu in src">-->
-
-            <!--{{ src.length }}-->
-        <!--</li>-->
-
-    <!--</ul>-->
-    <!--{{ counter }}-->
-<!--</menu>        -->
-
-<!-- =====-------------------------------------------------------------==== -->
-<!--<ul ng-repeat="lvl in renderLvl" ng-init="src=src[splitPath[0]].submenu;">-->
-<!--<li ng-repeat="menu in src" ng-init="src=src[renderLvl[1]].submenu;">-->
-<!--{{ menu.name }}-->
-<!--</li>-->
-<!--</ul>-->
-
-<!-- =====---------------------------------------------====== -->
-<!--<ul>-->
-<!--<li ng-repeat="menu in menuApp.src" class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}">-->
-<!--<a>  {{ menu.name }} </a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--<ul ng-hide="!menuApp.active && menuApp.active.submenu">-->
-<!--<li ng-repeat="submenu in menuApp.active.submenu" class="{{(submenu.itemIdx==menuApp.active.itemIdx) | active}}">-->
-<!--<a>  {{ submenu.name }} </a>-->
-<!--</li>-->
-<!--</ul>-->
-
-<!-- =====--------------------------------------------------------===== -->
-<!--
-    <li ng-repeat="menu in menus" title="{{menu.title}}" class="{{menu.active | active}}">
-         <a ng-click="active()" href="{{menu.url}}"> {{menu.name}} </a>
-    </li>
--->
+<!--class="{{(menu.itemIdx==menuApp.active.itemIdx) | active}}"-->
+<!--ng-hide="!menuApp.active && menuApp.active.submenu"-->
+<!--ng-click="active()"-->

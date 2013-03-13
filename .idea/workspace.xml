@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4c069cf5-db7e-46b8-ba80-d830a75b704b" name="Default" comment="menu up">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ng-test-prj.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363124974195" ignored="false" />
-    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363133641878" ignored="false" />
+    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363135379382" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
     <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362961196296" ignored="false" />
     <file path="/app.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362612683520" ignored="false" />
@@ -35,8 +36,11 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="21" selection-start="7478" selection-end="7478" vertical-scroll-proportion="0.38356164">
-              <folding />
+            <state line="223" column="0" selection-start="7527" selection-end="7527" vertical-scroll-proportion="5.780822">
+              <folding>
+                <element signature="e#6267#6585#0" expanded="false" />
+                <element signature="e#6601#6956#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -335,35 +339,50 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="210" column="71" selection-start="7019" selection-end="7019" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -423,8 +442,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="21" selection-start="7478" selection-end="7478" vertical-scroll-proportion="0.38356164">
-          <folding />
+        <state line="223" column="0" selection-start="7527" selection-end="7527" vertical-scroll-proportion="5.780822">
+          <folding>
+            <element signature="e#6267#6585#0" expanded="false" />
+            <element signature="e#6601#6956#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
