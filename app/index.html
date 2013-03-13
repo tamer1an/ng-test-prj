@@ -109,8 +109,9 @@ var dataSrc =[
         angular.module('menuApp', ['menuAppFilters']);
 
         /* Controllers */
-        function MenuCtrl($scope,$location,$window) {
-            $scope.menuApp = {"src":[],"active":false,"maxRenderLvl":1,"itemLvl":0,"fullActivePath":"0-"};
+        function MenuCtrl($scope,$window,$location) {
+            var mainSpliter = '_', subSpliter='_';
+            $scope.menuApp = {"submenu":[],"active":false,"maxRenderLvl":1,"itemLvl":0,"fullActivePath":"0_","mainSpliter":mainSpliter,"subSpliter":subSpliter};
 
             angular.forEach(dataSrc,function(v,k){
                 var lvlCounter = 0;
@@ -122,16 +123,16 @@ var dataSrc =[
                      (function getSubLvl(v,lvlCounter,parentIdx){
                          lvlCounter++;
                          for(var idx in v.submenu){
-                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+"-"+idx});
+                             addMenuParams({"item":v.submenu[idx],"lvlCounter": lvlCounter,"idx": idx,"parent": k,"fullPath":parentIdx+mainSpliter+idx});
                              checkMenuURl(v.submenu[idx], v);
 
                              if(typeof v.submenu[idx].submenu=='object'){
                                  lvlCounter++;
                                  for(var index in v.submenu[idx].submenu){
-                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+"-"+idx+"_"+index });
+                                     addMenuParams({ "item":v.submenu[idx].submenu[index], "lvlCounter": lvlCounter, "idx": index, "parent": idx,"fullPath":parentIdx+mainSpliter+idx+subSpliter+index });
                                      checkMenuURl(v.submenu[idx].submenu[index], v.submenu[idx]);
 
-                                     v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,parentIdx+"_"+idx+"_"+index);
+                                     v.submenu[idx].submenu[index] = getSubLvl(v.submenu[idx].submenu[index],lvlCounter,parentIdx+subSpliter+idx+subSpliter+index);
                                  }
                              }
                          }
@@ -141,7 +142,7 @@ var dataSrc =[
                 else
                     this.push(v);
 
-            },$scope.menuApp.src); //ngForEach
+            },$scope.menuApp.submenu); //ngForEach
 
             console.info($scope.menuApp);
 
@@ -166,7 +167,7 @@ var dataSrc =[
                 }
             }
 
-        }  MenuCtrl.$inject = ['$scope','$location','$window'];
+        }  MenuCtrl.$inject = ['$scope','$window','$location'];
 
 
 
@@ -179,14 +180,50 @@ var dataSrc =[
         }).filter('parentLvl', function(){
 
             return function(item){
-                console.group('itm',item);
+//                console.group();
+//                    console.warn('itm',item);
+//                    console.warn('this',this);
+//                    console.warn('parent',this.$parent);
+//                    console.warn('lvlItemsSize',this.$parent.lvlItemsSize);
+//                    console.warn('app',this.$parent.menuApp);
+//                console.groupEnd();
 
-                console.log('this',this);
-                console.log('parent',this.$parent);
-                console.log('app',this.$parent.menuApp);
-                console.groupEnd('win',window);
 
-				return false;
+//                splitPath = menuApp.fullActivePath.split('-');
+//                renderLvl = splitPath[1].split('_');
+//                src = menuApp.src;
+//                counter = renderLvl.length;
+
+                this.$parent.lvlItemsSize--;
+
+                return item;
+            };
+
+        }).filter('lvlRender', function(){
+
+            return function(item){
+//                console.group();
+//                    console.log('itm',item);
+//                    console.log('this',this);
+//                    console.log('parent',this.$parent);
+//                    console.log('app',this.$parent.menuApp);
+//                console.groupEnd();
+
+                if (this.$parent.lvlItemsSize == 0 && this.$parent.renderLvl.length>0){
+                    console.log('if',this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]].submenu);
+
+//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]].submenu;
+
+//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[]];
+//                    this.$parent.src = this.$parent.src[this.$parent.renderLvl[this.$parent.lvlcounter++]];
+                }
+
+//                splitPath = menuApp.fullActivePath.split('-');
+//                renderLvl = splitPath[1].split('_');
+//                src = menuApp.src;
+//                counter = renderLvl.length;
+
+				return item;
             };
         });
 
@@ -197,37 +234,87 @@ var dataSrc =[
 
 	<menu ng-controller="MenuCtrl"
           ng-init="
-	        splitPath = menuApp.fullActivePath.split('-');
-	        renderLvl = splitPath[1].split('_');
-	        src = menuApp.src;
-	        counter = renderLvl.length;
+              renderLvl = menuApp.fullActivePath.split('_');
+              src = menuApp.submenu;
+              lvlcounter = 0;
+              lvlItemsSize = src.length;
 	      ">
 
-            <ul>
-                <li ng-repeat="menu in src">
+            <ul ng-repeat="lvl in renderLvl">
+                <li ng-repeat="menu in src | parentLvl | lvlRender">
                      {{ menu.name }}
                 </li>
+
+                {{ lvl }}
             </ul>
+
+
+        <!--"{{(menu.itemIdx==menuApp.active.itemIdx) | active}}"-->
+    </menu>
+
+
+    <!--<menu ng-controller="MenuCtrl"-->
+        <!--ng-init="-->
+        <!--splitPath = menuApp.fullActivePath.split('_');-->
+        <!--renderLvl = splitPath[1].split('_');-->
+        <!--src = menuApp.submenu;-->
+        <!--counter = renderLvl.length;">-->
+
+        <!--<ul>-->
+            <!--<li ng-repeat="menu in src">-->
+                <!--{{ menu.name }}-->
+            <!--</li>-->
+        <!--</ul>-->
 
         <!--<ul ng-repeat="lvl in renderLvl">-->
 
 
-            <ul ng-repeat="lvl in renderLvl"
-                ng-init="src=src[splitPath[0]].submenu;
-                ">
+        <!--<ul ng-repeat="lvl in renderLvl"-->
+             <!--ng-init="src=src[splitPath[0]].submenu;-->
+        <!--">-->
 
-                <li ng-repeat="menu in src | parentLvl">
-                <!--<li ng-repeat="menu in src">-->
+        <!--<li ng-repeat="menu in src | parentLvl">-->
+         <!--{{ src.length }}-->
+        <!--</li>-->
 
-                         {{ src.length }}
-                </li>
-
-            </ul>
-        <!--{{ counter }}-->
-    </menu>
+        <!--</ul>-->
+        <!--&lt;!&ndash;{{ counter }}&ndash;&gt;-->
+    <!--</menu>-->
 
 </body>
 </html>
+
+<!-- =====-------------------------------------------------------------==== -->
+<!--<menu ng-controller="MenuCtrl"-->
+      <!--ng-init="-->
+	        <!--splitPath = menuApp.fullActivePath.split('-');-->
+	        <!--renderLvl = splitPath[1].split('_');-->
+	        <!--src = menuApp.src;-->
+	        <!--counter = renderLvl.length;-->
+	      <!--">-->
+
+    <!--<ul>-->
+        <!--<li ng-repeat="menu in src">-->
+            <!--{{ menu.name }}-->
+        <!--</li>-->
+    <!--</ul>-->
+
+    <!--<ul ng-repeat="lvl in renderLvl">-->
+
+
+    <!--<ul ng-repeat="lvl in renderLvl"-->
+        <!--ng-init="src=src[splitPath[0]].submenu;-->
+                <!--">-->
+
+        <!--<li ng-repeat="menu in src | parentLvl">-->
+            <!--<li ng-repeat="menu in src">-->
+
+            <!--{{ src.length }}-->
+        <!--</li>-->
+
+    <!--</ul>-->
+    <!--{{ counter }}-->
+<!--</menu>        -->
 
 <!-- =====-------------------------------------------------------------==== -->
 <!--<ul ng-repeat="lvl in renderLvl" ng-init="src=src[splitPath[0]].submenu;">-->
