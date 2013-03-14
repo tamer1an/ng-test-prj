@@ -7,7 +7,7 @@
     <ignored path="ng-test-prj.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363264159054" ignored="false" />
-    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363268078744" ignored="false" />
+    <file path="/index.html" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1363269019844" ignored="false" />
     <file path="/resources.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362668761215" ignored="false" />
     <file path="/controllers.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362961196296" ignored="false" />
     <file path="/app.js" changelist="4c069cf5-db7e-46b8-ba80-d830a75b704b" time="1362612683520" ignored="false" />
@@ -35,7 +35,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="12" selection-start="8001" selection-end="8001" vertical-scroll-proportion="0.55159235">
+            <state line="12" column="15" selection-start="319" selection-end="325" vertical-scroll-proportion="-4.6242037">
               <folding />
             </state>
           </provider>
@@ -426,7 +426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="12" selection-start="8001" selection-end="8001" vertical-scroll-proportion="0.55159235">
+        <state line="12" column="15" selection-start="319" selection-end="325" vertical-scroll-proportion="-4.6242037">
           <folding />
         </state>
       </provider>
