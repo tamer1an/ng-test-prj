@@ -1,16 +1,10 @@
-/**
- * User: antr
- * Date: 3/6/13
- * Time: 4:54 PM
- * Example Data source for app Testing
- */
-
 var dataSrc =[
     {
+        "activeIdx":2,
         "name": "User",
         "title":"user",
-        "url":'/ng-test-prj/app/index.html',
-//        "renderLevel":2,
+        "url":'#',
+        //        "renderLevel":2,
         "submenu": [{
             "name": "Add User",
             "title":"Add user",
@@ -18,43 +12,70 @@ var dataSrc =[
         },{
             "name": "Edit User",
             "title":"Edit user",
-            "url":'#'
+            "url":'#',
+            "submenu": [{
+                "name": "Add passage",
+                "title":"Add user",
+                "url":'#'
+            },{
+                "name": "Edit electronic",
+                "title":"Edit user",
+                "url": '/ng-test-prj/app/index.html'
+            }]
         }]
     },{
         "name": "Video",
         "title":"video",
         "url":'#'
-        },{
+    },{
         "name": "Player",
         "title":"player",
         "url":'#',
-//        "renderLevel":3,
+        //        "renderLevel":3,
         "submenu": [{
             "name": "Add Player",
             "title":"Add Player",
-            "url":'/ng-test-prj/app/',
+            "url":'#',
             "submenu": [{
-              "name": "Add subPlayer",
-              "title":"Add subPlayer",
-              "url":'#'
+                "name": "Add McClintock",
+                "title":"Add Malorum",
+                "url":'/ng-test-prj/app/'
             },{
-              "name": "Edit subPlayer",
-              "title":"Edit subPlayer",
-              "url":'#'
+                "name": "Edit Lorem",
+                "title":"Edit Desktop",
+                "url":'#'
             }]
         },{
             "name": "Edit Player",
             "title":"Edit Player",
             "url":'#',
             "submenu": [{
-                "name": "Add _subPlayer",
-                "title":"Add _subPlayer",
+                "name": "Add Various",
+                "title":"Add Various",
                 "url":'#'
-              },{
-                "name": "Edit _subPlayer",
-                "title":"Edit _subPlayer",
-                "url":'#'
-              }]
+            },{
+                "name": "Edit Characteristic",
+                "title":"Edit characteristic",
+                "url":'#',
+                "submenu": [{
+                    "name": "Model",
+                    "title":"Add _subPlayer",
+                    "url":'#',
+                    "submenu": [{
+                        "name": "Predefined",
+                        "title":"Add _subPlayer",
+                        "url":'#'
+                    },{
+                        "name": "Randomised",
+                        "title":"Edit _subPlayer",
+                        "url":'#'
+                    }]
+                },{
+                    "name": "Contrary",
+                    "title":"Edit _subPlayer",
+                    "url":'#'
+                }]
+            }]
         }]
     },{
         "name": "Playlist",
@@ -66,5 +87,3 @@ var dataSrc =[
         "url":'#'
     }
 ];
-
-
