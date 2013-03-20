@@ -19,8 +19,13 @@ function MyCtrl1($scope) {
 
 	camera = new THREE.PerspectiveCamera(45,W/H,1,1000000);
 	camera.position.z = 20000;
-
 	scene = new THREE.Scene();
+	
+	
+	
+	render = new THREE.WebGLRenderer({antialias: true});
+	render.setSize(W,H);
+	container.appendChild(render.domElement);
 	
 	// console.log(container)
 	// console.log(scene)
