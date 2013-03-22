@@ -4,6 +4,7 @@
 
 
 function MyCtrl1($scope) {
+
 	
 	var scene, camera, render, container, controls;
 	var W,H;
@@ -47,7 +48,12 @@ function MyCtrl1($scope) {
 	render.setSize(W,H);
 	container.appendChild(render.domElement); // console.log(container) // console.log(scene)
 
-    var t=0;
+    var t=0,y=0;
+
+    document.addEventListener('mousemove',function(event){
+          y = parseInt(event.offsetY);
+    });
+
     animate();
 
     function animate(){
@@ -59,11 +65,14 @@ function MyCtrl1($scope) {
         earth.position.z = Math.cos(t*0.2)*1700;
 
 // camera angle-view experiments
-//        camera.lookAt(earth.position);
+//   camera.lookAt(earth.position);
 
-//        camera.position.x = earth.position.x;
-//        camera.position.z = earth.position.z;
-//        camera.lookAt(sun.position);
+//   camera.position.x = earth.position.x;
+//   camera.position.z = earth.position.z;
+//   camera.lookAt(sun.position);
+
+        camera.position.y = y*5;
+        camera.lookAt(scene.position);
 
         t+=Math.PI/180*2;
 
@@ -71,7 +80,7 @@ function MyCtrl1($scope) {
     }
 }
 
-MyCtrl1.$inject = [];
+MyCtrl1.$inject = ['$scope'];
 
 
 function MyCtrl2() {}
