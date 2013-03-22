@@ -58,7 +58,12 @@ function MyCtrl1($scope) {
         earth.position.x = Math.sin(t*0.2)*2000;
         earth.position.z = Math.cos(t*0.2)*1700;
 
+// camera angle-view experiments
 //        camera.lookAt(earth.position);
+
+//        camera.position.x = earth.position.x;
+//        camera.position.z = earth.position.z;
+//        camera.lookAt(sun.position);
 
         t+=Math.PI/180*2;
 
