@@ -4,10 +4,8 @@
 
 
 function MyCtrl1($scope) {
-	var scene, camera, render, container, controls;
-	var W,H;
-	
-	// var light;	// var info = false;	// var infoMercury = false;
+	var scene, camera, render, container, controls;      	// var light;	// var info = false;	// var infoMercury = false;
+    var W,H;
 	
 	W = parseInt(document.body.clientWidth);
 	H = parseInt(document.body.clientHeight);
@@ -17,19 +15,27 @@ function MyCtrl1($scope) {
 
 	camera = new THREE.PerspectiveCamera(45,W/H,1,10000);
 	camera.position.z = 6300;
+    camera.rotation.z = -Math.PI/20;
 	scene = new THREE.Scene();
 
 	//sun
     var sun_geom = new THREE.SphereGeometry(750,70,70),
-        sun_mat = new THREE.MeshNormalMaterial(),
-        sun = new THREE.Mesh(sun_geom,sun_mat);
+
+    texture = new THREE.ImageUtils.loadTexture('img/sun2.png');
+    texture.anisotropy = 8;
+    var  sun_mat = new THREE.MeshPhongMaterial({map:texture,emissive:0xffffff}),
+         sun = new THREE.Mesh(sun_geom,sun_mat);
 
     scene.add(sun);
 
     //earth
     var earth_geom = new THREE.SphereGeometry(100,60,60),
-        earth_mat = new THREE.MeshNormalMaterial(),
+        texture2 = new THREE.ImageUtils.loadTexture('img/earth.jpg');
+        texture2.anisotropy = 8;
+
+    var earth_mat = new THREE.MeshPhongMaterial({map:texture2}),        //,emissive:0xffffff //,emissive:0x0000000
         earth = new THREE.Mesh(earth_geom,earth_mat);
+        earth.castShadow = true;
 
     scene.add(earth);
 
@@ -67,6 +73,18 @@ function MyCtrl1($scope) {
     stars2 = new THREE.ParticleSystem(starsGeometry2,starsMaterial2);
     stars2.scale.set(1,2,4);
     scene.add(stars2);
+
+    // Light
+    var ambient = new THREE.AmbientLight(0x222222);
+    scene.add(ambient);
+
+    var light = new THREE.PointLight(0xbbbbbb,0.8,10000);
+        light.position.set(0,0,500);
+        light.castShadow = true;
+        light.shadowMapWidth = 2048;
+        light.shadowMapHeight = 2048;
+    scene.add(light);
+
 	////////////////////////////
 	
 	
@@ -79,7 +97,7 @@ function MyCtrl1($scope) {
     var t=0,y=0;
 
     document.addEventListener('mousemove',function(event){
-          y = parseInt(event.offsetY);
+       y = parseInt(event.offsetY);
     });
 
     animate();
@@ -92,18 +110,7 @@ function MyCtrl1($scope) {
         earth.position.x = Math.sin(t*0.2)*2000;
         earth.position.z = Math.cos(t*0.2)*1700;
 
-// camera angle-view experiments
-//   camera.lookAt(earth.position);
-
-//   camera.position.x = earth.position.x;
-//   camera.position.z = earth.position.z;
-//   camera.lookAt(sun.position);
-
-        camera.position.y = y*5;
-        camera.lookAt(scene.position);
-
         t+=Math.PI/180*2;
-
         render.render(scene,camera);
     }
 }
@@ -162,6 +169,25 @@ function MyCtrl2() {
     function animate(){
         requestAnimationFrame(animate);
         render.render(scene,camera);
+            //  requestAnimationFrame(animate);
+            //  sun.rotation.y+=0.002;
+
+            //  earth.rotation.y+=0.002;
+            //  earth.position.x = Math.sin(t*0.2)*2000;
+            //  earth.position.z = Math.cos(t*0.2)*1700;
+
+            //  camera angle-view experiments
+            //  camera.lookAt(earth.position);
+
+            //  camera.position.x = earth.position.x;
+            //  camera.position.z = earth.position.z;
+            //  camera.lookAt(sun.position);
+
+            //  camera.position.y = y*5;
+            //  camera.lookAt(scene.position);
+
+            //  t+=Math.PI/180*2;
+            //  render.render(scene,camera);
     }
 }
 MyCtrl2.$inject = [];
