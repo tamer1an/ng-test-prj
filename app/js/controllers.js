@@ -18,22 +18,55 @@ function MyCtrl1($scope) {
 	camera = new THREE.PerspectiveCamera(45,W/H,1,10000);
 	camera.position.z = 6300;
 	scene = new THREE.Scene();
-	
-	
+
 	//sun
-    var sun_geom = new THREE.SphereGeometry(430,30,30),
+    var sun_geom = new THREE.SphereGeometry(750,70,70),
         sun_mat = new THREE.MeshNormalMaterial(),
         sun = new THREE.Mesh(sun_geom,sun_mat);
 
     scene.add(sun);
 
     //earth
-    var earth_geom = new THREE.SphereGeometry(100,30,30),
+    var earth_geom = new THREE.SphereGeometry(100,60,60),
         earth_mat = new THREE.MeshNormalMaterial(),
         earth = new THREE.Mesh(earth_geom,earth_mat);
-        earth.position.x = 1500;
 
     scene.add(earth);
+
+    // stars
+    var starsGeometry = new THREE.Geometry();
+    var starsMaterial = new THREE.ParticleBasicMaterial({opacity:0.4,color:0xbbbbbb,size:1,sizeAttenuation:false});
+    var stars; //real partice object
+
+    for(var i=0;i<15000;i++){
+        var vertex = new THREE.Vector3();
+        vertex.x = Math.random()*2-1;
+        vertex.y = Math.random()*2-1;
+        vertex.z = Math.random()*2-1;
+        vertex.multiplyScalar(6000);
+        starsGeometry.vertices.push(vertex);
+    }
+
+    stars = new THREE.ParticleSystem(starsGeometry,starsMaterial);
+    stars.scale.set(2,2,2);
+    scene.add(stars);
+
+    var starsGeometry2 = new THREE.Geometry();
+    var starsMaterial2 = new THREE.ParticleBasicMaterial({opacity:0.8,color:0xbbbbbb,size:1,sizeAttenuation:false});
+    var stars2; //real partice object
+
+    for(var i=0;i<5000;i++){
+        var vertex = new THREE.Vector3();
+        vertex.x = Math.random()*2-1;
+        vertex.y = Math.random()*2-1;
+        vertex.z = Math.random()*2-1;
+        vertex.multiplyScalar(6000);
+        starsGeometry2.vertices.push(vertex);
+    }
+
+    stars2 = new THREE.ParticleSystem(starsGeometry2,starsMaterial2);
+    stars2.scale.set(1,2,4);
+    scene.add(stars2);
 	////////////////////////////
 	
 	
@@ -78,6 +111,16 @@ function MyCtrl1($scope) {
 MyCtrl1.$inject = ['$scope'];
 
 
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////// test particles
 function MyCtrl2() {
     var scene, camera, render, container, controls;
     var W,H;  // var light;	// var info = false;	// var infoMercury = false;
@@ -93,7 +136,7 @@ function MyCtrl2() {
     scene = new THREE.Scene();
 
     var starsGeometry = new THREE.Geometry();
-    var starsMaterial = new THREE.ParticleBasicMaterial({size:1,sizeAttenuation:false});
+    var starsMaterial = new THREE.ParticleBasicMaterial({color:0xcccccc,size:1,sizeAttenuation:false});
     var stars; //real partice object
 
     for(var i=0;i<5000;i++){
@@ -101,7 +144,7 @@ function MyCtrl2() {
         vertex.x = Math.random()*2-1;
         vertex.y = Math.random()*2-1;
         vertex.z = Math.random()*2-1;
-//        vertex.multiplyScalar(6000);
+        vertex.multiplyScalar(6000);
         starsGeometry.vertices.push(vertex);
     }
 
@@ -122,44 +165,3 @@ function MyCtrl2() {
     }
 }
 MyCtrl2.$inject = [];
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-	function TodoCtrl($scope) {
-		  $scope.todos = [
-			{text:'learn angular', done:true},
-			{text:'build an angular app', done:false}];
-
-		  $scope.addTodo = function() {
-			$scope.todos.push({text:$scope.todoText, done:false});
-			$scope.todoText = '';
-		  };
-
-		  $scope.remaining = function() {
-			var count = 0;
-			angular.forEach($scope.todos, function(todo) {
-			  count += todo.done ? 0 : 1;
-			});
-			return count;
-		  };
-
-		  $scope.archive = function() {
-			var oldTodos = $scope.todos;
-			$scope.todos = [];
-			angular.forEach(oldTodos, function(todo) {
-			  if (!todo.done) $scope.todos.push(todo);
-			});
-		  };
-		}
-*/
