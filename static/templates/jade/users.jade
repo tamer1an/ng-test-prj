@@ -1,8 +1,10 @@
-section.ng-cloak(data-srcUrl="/rest_api")
-    button.ng-cloak#toggleFrames(ng-show="playerState",ng-click="toggleFrames()") {{imageElement?"video":"frames"}}
-    button.ng-cloak(ng-show="imageElement", ng-click="previous()") <
-    button.ng-cloak(ng-show="imageElement", ng-click="next()") >
-    p(ng-show="imageElement")  images: {{ currentFrame+1 }} - from {{countFrames}}
+section
+	<ul class="menu">
+		<li><a href="#/view1">view1</a></li>
+		<li><a href="#/view2">view2</a></li>
+
+	<div ng-view></div>
+  
 
 
 
