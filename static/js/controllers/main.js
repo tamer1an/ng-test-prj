@@ -8,11 +8,10 @@
  *  @author Andrii Trybynenko ()
  *  @global {}
  */
-angular.module('adminCrud')
-       .controller('adminCtrl', function ($scope,$compile,$http) { //  $scope.frames = window.frames;
+
+angular.module('adminCRUD')
+       .controller('usersCtrl', function ($scope,$compile,$http) { //  $scope.frames = window.frames;
 
 
 });
-
-
 

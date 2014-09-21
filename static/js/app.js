@@ -4,15 +4,13 @@
  *  @name {}
  *  @description {}
  *
- *  @module {virtualKeypad}
+ *  @module {}
  *  @author Andrii Trybynenko (...@gmail.com)
  *  @global {}
  */
 
-var fpApp = {
-    app : angular.module('framePlayer', [
-//        'ngCsv'
-    ])
+var INApp = {
+    app : angular.module('adminCRUD', [  ])
 };
 
 /**
@@ -20,12 +18,12 @@ var fpApp = {
  *  @description {Root derective}
  *  @module {}
  */
-angular.module('adminCRUD').directive('admin', function() {
+angular.module('adminCRUD').directive('users', function() {
     return {
         restrict: 'A',
         replace: true,
-        templateUrl: vkModulePath+'html/admin.html',
-        controller: 'adminCtrl',
+        templateUrl: 'html/users.html',
+        controller: 'usersCtrl',
         link: function($scope,element){
 
         }
@@ -33,7 +31,3 @@ angular.module('adminCRUD').directive('admin', function() {
 });
 
 
-
-//function updateJustEventId () {
-//    eventId = document.querySelectorAll('li[data-eventid].c')[0].dataset.eventid;
-//}
