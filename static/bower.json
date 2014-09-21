@@ -1,0 +1,11 @@
+{
+    "name": "Admin-CRUD",
+    "version": "0.0.0",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+        "angular": "*"
+    }
+}

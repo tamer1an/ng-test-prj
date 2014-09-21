@@ -1,0 +1,11 @@
+{
+    "name": "virtual-keypad",
+    "version": "0.0.0",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+	"dependencies": {        
+		"angular-mocks":    "*"
+    }
+}

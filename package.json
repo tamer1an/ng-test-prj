@@ -1,0 +1,30 @@
+{
+  "name": "admin-crud",
+  "version": "0.0.0",
+  "description": "IN dev test",
+  "main": "app.js",
+  "scripts": {
+   "start": "node app.js"   
+  },
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/tamer1an/ng-test-prj",
+    "brunch" : ""
+
+  },
+  "author": "Andrii Trybynenko",
+  "bugs": {
+          "url": "https://github.com/tamer1an/ng-test-prj"
+
+   },
+  "homepage": "http://localhost:3000",
+  "devDependencies": {
+        "jade":       "*",
+        "stylus":     "*",
+        "express":    "*"
+  }
+  ,
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
