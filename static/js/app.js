@@ -18,6 +18,18 @@ var INApp = {
  *  @description {Root derective}
  *  @module {}
  */
+angular.module('adminCRUD').directive('app', function() {
+    return {
+        restrict: 'A',
+        replace: true,
+        templateUrl: 'html/app.html',
+        controller: 'usersCtrl',
+        link: function($scope,element){
+
+        }
+    }
+});
+
 angular.module('adminCRUD').directive('users', function() {
     return {
         restrict: 'A',
@@ -34,7 +46,10 @@ angular.module('adminCRUD').directive('users', function() {
 // Declare app level module which depends on filters, and services  ['myApp.filters', 'myApp.services', 'myApp.directives']
 angular.module('adminCRUD').
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/view1', {templateUrl: '../partials/partial1.html', controller: 'usersCtrl'});
+
+    $routeProvider.when('/users', {templateUrl: '../html/users.html', controller: 'usersCtrl'});
+
+
     // $routeProvider.when('/view2', {templateUrl: '../partials/partial2.html', controller: MyCtrl2});
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);

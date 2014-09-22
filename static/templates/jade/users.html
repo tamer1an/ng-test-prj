@@ -1,0 +1,7 @@
+<aside><ul class="users-options"><li></li></ul><fieldset><legend>Users:
+<button ng-click="removeAllUsers()"> remove all </button>
+<input class='search' placeholder='- Filter Users -' type='text' ng-model='searchUser' value=''/>
+<input class='addUser' placeholder='- First name -' type='text'  ng-model='newUserName' value=''/>
+<input class='addUser' placeholder='- Last name -' type='text'  ng-model='newUserLastName' value=''/>
+<input type='button'  ng-click="addUser()" value='Add'/></legend><ul><li ng-repeat="(key ,user) in appModel.users |filter:searchUser">{{ user.firstName +" "+ user.lastName }}
+<input type="button" value="Remove" ng-click="removeUser(key)"/></li></ul></fieldset></aside>

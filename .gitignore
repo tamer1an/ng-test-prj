@@ -6,6 +6,7 @@
 .project
 .metadata
 bin/
+node_modules/
 tmp/
 *.tmp
 *.bak
@@ -63,6 +64,7 @@ local.properties
 *.vspscc
 .builds
 *.dotCover
+
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 #packages/

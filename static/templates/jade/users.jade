@@ -1,9 +1,22 @@
-section
-	<ul class="menu">
-		<li><a href="#/view1">view1</a></li>
-		<li><a href="#/view2">view2</a></li>
+aside
+    ul.users-options
+        li
 
-	<div ng-view></div>
+
+    fieldset
+        legend Users:
+            | <button ng-click="removeAllUsers()"> remove all </button>
+            | <input class='search' placeholder='- Filter Users -' type='text' ng-model='searchUser' value=''/>
+            | <input class='addUser' placeholder='- First name -' type='text'  ng-model='newUserName' value=''/>
+            | <input class='addUser' placeholder='- Last name -' type='text'  ng-model='newUserLastName' value=''/>
+            | <input type='button'  ng-click="addUser()" value='Add'/>
+
+        ul
+            li(ng-repeat="(key ,user) in appModel.users |filter:searchUser")
+                | {{ user.firstName +" "+ user.lastName }}
+                | <input type="button" value="Remove" ng-click="removeUser(key)"/>
+
+
   
 
 
