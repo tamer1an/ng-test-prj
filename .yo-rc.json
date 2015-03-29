@@ -1,0 +1,6 @@
+{
+  "generator-ngbp-material": {
+    "projectName": "msDashbord",
+    "useCoffeescript": true
+  }
+}
