@@ -17,6 +17,8 @@ filter = require('gulp-filter')
 concat = require('gulp-concat')
 rename = require('gulp-rename')
 gulpif = require('gulp-if')
+es6to5 = require('gulp-es6to5')
+babel = require('gulp-babel')
 
 # Paths
 index_path = 'build/index.html'
@@ -25,6 +27,12 @@ build_dir = 'build/'
 build_vendor_dir = 'build/vendor/'
 
 
+gulp.task 'es6to5', ->
+  return gulp.src('src/app/app.js')
+    .pipe(babel())
+    .pipe(gulp.dest('dist'));
+
+	
 gulp.task 'connect', ->
 	connect.server
 		root : ['build']
