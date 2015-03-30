@@ -1,25 +1,8 @@
-doctype html
-html(lang="en", ng-app="angularNgbpMaterial")
-  head
-    title= pageTitle
+extends layout
 
-    // inject:css 
-    // Note that inject and endinject must be surrounded by a space on both sides
-    // endinject 
-
-    // inject:js 
-    // Note that inject and endinject must be surrounded by a space on both sides
-    // endinject 
-
-  body(ng-controller="AppController", ng-cloak)
-
-    div(layout="column", layout-fill)
-      md-toolbar.md-primary
-        .md-toolbar-tools
-          | my title lol
-          span( flex )
-          md-button
-            | look ! a button !
-
-
-
+block metaBlock
+    meta(charset="utf-8")
+    title Dashboard
+    meta(name="author", content="Andrii Trybynenko")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.9, user-scalable=yes")
+    link(href='images/favicon.ico', rel='shortcut icon', type='image/x-icon')

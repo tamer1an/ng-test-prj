@@ -1,0 +1,24 @@
+doctype html
+html(lang="en", ng-app="msDashboard")
+  head
+    block metaBlock
+
+    // inject:css 
+    // Note that inject and endinject must be surrounded by a space on both sides
+    // endinject 
+
+    // inject:js 
+    // Note that inject and endinject must be surrounded by a space on both sides
+    // endinject 
+
+  body(ng-controller="DashboardController", ng-cloak)
+
+    div(layout="column", layout-fill)
+      md-toolbar.md-primary
+        .md-toolbar-tools
+          | my title lol
+          span( flex )
+          md-button
+            | look ! a button !
+
+

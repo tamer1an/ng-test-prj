@@ -1,22 +1,26 @@
+globs = require './globs'
+path = require('path')
+
 gulp = require 'gulp'
 gutil = require 'gulp-util'
-connect = require 'gulp-connect'
-jade = require 'gulp-jade'
-sass = require 'gulp-sass'
-sourcemaps = require 'gulp-sourcemaps'
-coffee = require 'gulp-coffee'
-inject = require 'gulp-inject'
-karma = require 'gulp-karma'
 changed = require 'gulp-changed'
 watch = require 'gulp-watch'
 plumber = require 'gulp-plumber'
-globs = require './globs'
 series = require 'stream-series'
-path = require('path')
 filter = require('gulp-filter')
 concat = require('gulp-concat')
 rename = require('gulp-rename')
 gulpif = require('gulp-if')
+
+jade = require 'gulp-jade'
+sass = require 'gulp-sass'
+coffee = require 'gulp-coffee'
+
+karma = require 'gulp-karma'
+sourcemaps = require 'gulp-sourcemaps'
+
+inject = require 'gulp-inject'
+
 es6to5 = require('gulp-es6to5')
 babel = require('gulp-babel')
 
@@ -27,17 +31,10 @@ build_dir = 'build/'
 build_vendor_dir = 'build/vendor/'
 
 
-gulp.task 'es6to5', ->
-  return gulp.src('src/app/app.js')
+gulp.task 'move:es6to5', ->
+  return gulp.src globs.es6to5
     .pipe(babel())
-    .pipe(gulp.dest('dist'));
-
-	
-gulp.task 'connect', ->
-	connect.server
-		root : ['build']
-		livereload : true
-	return
+    .pipe(gulp.dest('build/app'));
 
 
 gulp.task 'move:jade', ->
@@ -86,16 +83,17 @@ gulp.task 'run:karma', ->
 
 gulp.task 'watch', ->
 	gulp.watch globs.vendor, ['move:vendor']
+	gulp.watch globs.es6to5, ['move:es6to5']
 	gulp.watch globs.jade, ['move:jade']
 	gulp.watch globs.sass, ['move:sass']
 	gulp.watch globs.coffee, ['move:coffee']
 	gulp.watch globs.karma, ['run:karma']
 	
 
-gulp.task 'move:files', ['move:vendor', 'move:sass', 'move:coffee'], ->
+gulp.task 'move:files', ['move:vendor', 'move:sass', 'move:coffee', 'move:es6to5'], ->
 	gulp.start 'move:jade'
 
-gulp.task 'default', ['move:files', 'connect', 'watch']
+gulp.task 'default', ['move:files', 'watch']
 
 `
 /** *****************************************
