@@ -1,10 +1,10 @@
 globs = require './globs'
-path = require('path')
+path  = require('path')
 
-gulp = require 'gulp'
+gulp  = require 'gulp'
 gutil = require 'gulp-util'
 changed = require 'gulp-changed'
-watch = require 'gulp-watch'
+watch   = require 'gulp-watch'
 plumber = require 'gulp-plumber'
 series = require 'stream-series'
 filter = require('gulp-filter')
@@ -22,12 +22,12 @@ sourcemaps = require 'gulp-sourcemaps'
 inject = require 'gulp-inject'
 
 es6to5 = require('gulp-es6to5')
-babel = require('gulp-babel')
+babel  = require('gulp-babel')
 
 # Paths
 index_path = 'build/index.html'
-src_dir = 'src/'
-build_dir = 'build/'
+src_dir    = 'src/'
+build_dir  = 'build/'
 build_vendor_dir = 'build/vendor/'
 
 
@@ -43,6 +43,14 @@ gulp.task 'move:jade', ->
 	.pipe jade({ pretty : true })
 	.pipe inject(gulp.src(globs.app, { read : false }), { ignorePath : ['build'], addRootSlash : false })
 	.pipe gulp.dest(build_dir)
+
+
+#gulp.task 'move:jade-derectives', ->
+	#gulp.src globs.jade
+	#.pipe plumber()
+	#.pipe jade({ pretty : true })
+	#.pipe inject(gulp.src(globs.app, { read : false }), { ignorePath : ['build'], addRootSlash : false })
+	#.pipe gulp.dest(build_dir)
 
 
 gulp.task 'move:sass', ->
@@ -89,6 +97,12 @@ gulp.task 'watch', ->
 	gulp.watch globs.coffee, ['move:coffee']
 	gulp.watch globs.karma, ['run:karma']
 	
+
+gulp.task 'watch-simple', ->
+	gulp.watch globs.es6to5, ['move:es6to5']
+	gulp.watch globs.jade, ['move:jade']
+	gulp.watch globs.sass, ['move:sass']
+
 
 gulp.task 'move:files', ['move:vendor', 'move:sass', 'move:coffee', 'move:es6to5'], ->
 	gulp.start 'move:jade'

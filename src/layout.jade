@@ -11,14 +11,29 @@ html(lang="en", ng-app="msDashboard")
     // Note that inject and endinject must be surrounded by a space on both sides
     // endinject 
 
-  body(ng-controller="DashboardController", ng-cloak)
+  body.mainApp(ng-controller="DashboardController", ng-cloak)
 
-    div(layout="column", layout-fill)
+    header
       md-toolbar.md-primary
         .md-toolbar-tools
-          | my title lol
+          | my title lol 1
           span( flex )
           md-button
             | look ! a button !
-
-
+    
+    section(layout='row', flex, layout-fill)
+      ng-include(src="/assets/sideBarLeft.html")
+             
+      md-content#Dashboard.md-padding(flex)  
+        div(layout='column', layout-fill='', layout-align='top center')
+          p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
+                   
+          div
+            md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
+                  
+          div
+            md-button.md-primary(ng-click='toggleRight()') Toggle right
+               
+        div(flex='')
+           
+      ng-include(src="/assets/sideBarRight.html")
