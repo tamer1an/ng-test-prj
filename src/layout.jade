@@ -13,27 +13,39 @@ html(lang="en", ng-app="msDashboard")
 
   body.mainApp(ng-controller="DashboardController", ng-cloak)
 
-    header
-      md-toolbar.md-primary
-        .md-toolbar-tools
-          | my title lol 1
-          span( flex )
-          md-button
-            | look ! a button !
-    
+    // header(ng-hide="true")
+    //   md-toolbar.md-primary
+    //     .md-toolbar-tools
+    //       | my title lol 1
+    //       span( flex )
+    //       md-button
+    //         | look ! a button !
+    // $mdMedia('gt-md')
     section(layout='row', flex, layout-fill)
-      ng-include(src="/assets/sideBarLeft.html")
+      md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="true")
+          md-toolbar
+            h1.md-toolbar-tools Sidenav Left
+                 
+          md-content.md-padding(ng-controller='LeftCtrl')
+            md-button.md-primary(ng-click='close()', hide-gt-md='') Close Sidenav Left
+                     
+            p(hide-md='', show-gt-md='') This sidenav is locked open on your device. To go back to the default behavior,narrow your display.
              
-      md-content#Dashboard.md-padding(flex)  
-        div(layout='column', layout-fill='', layout-align='top center')
-          p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
-                   
-          div
-            md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
-                  
-          div
-            md-button.md-primary(ng-click='toggleRight()') Toggle right
-               
-        div(flex='')
-           
-      ng-include(src="/assets/sideBarRight.html")
+        md-content#Dashboard.md-padding(flex)
+          div(layout='column', layout-fill='', layout-align='top center')
+            p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
+                     
+            // div
+            //   md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
+                    
+            // div
+            //   md-button.md-primary(ng-click='toggleRight()') Toggle right
+                 
+          div(flex='')
+             
+        // md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
+        //   md-toolbar.md-theme-light
+        //     h1.md-toolbar-tools Sidenav Right
+                 
+        //   md-content.md-padding(ng-controller='RightCtrl')
+        //     md-button.md-primary(ng-click='close()') Close Sidenav Right
