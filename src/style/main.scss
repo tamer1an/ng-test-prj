@@ -4,28 +4,81 @@
  * the Grunt configuration that is automatically processed.
  */
 
-
 //@import 'angular_material';
 
 
-
-/**
- * Typography
- */
-
-// @font-face {
-//   font-family: 'Roboto';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
-// }
-
+/* VARIABLES */
+// COLORS 
 $primary-bg: #000000;
+$secondary-bg: #1E1E1E;
+$inactive-item: grey;
+$interface-font-color: white;
+$interface-stroke-width: 2px;
+// DIMENSIONS 
+$sidebar-width: 210px;
 
+/* RESET */
 body {
-    color:white;
+    color:$interface-font-color;
 }
 
+/* SYSTEM CLASSES */
+.tac{
+    text-align:center;
+}
+
+/* APP ID */
 #Dashboard {
- background: $primary-bg;
+     background: $primary-bg;
+}
+
+#SideNav {
+    width: $sidebar-width;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
+    
+    &Content {
+        height: calc(100vh);
+        overflow: hidden;
+        background: $secondary-bg; 
+    }
+    
+    .app_Fab {
+         color: $interface-font-color;
+         transform: scale(0.7);
+         background: $secondary-bg;
+    }
+}
+
+/* APP CLASS */
+.app {
+    
+    &_SideNav_Tools {
+        margin-top:15px;
+    }
+    
+    &_h4 {
+        color: $inactive-item;
+        font-size: 53%;
+        margin-top: 0;
+    }
+    
+    &_Fab {
+        background: $secondary-bg;
+        border: $interface-stroke-width solid $interface-font-color;
+        font-size:150%;
+        
+        &_Add, &_Sub {
+          font-size: 150%;
+          font-family: serif;
+        }
+        
+        &_Add {
+            line-height: 40px;
+        }
+        
+        &_Sub {
+            line-height: 0px;
+        }
+    }
 }

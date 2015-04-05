@@ -11,41 +11,35 @@ html(lang="en", ng-app="msDashboard")
     // Note that inject and endinject must be surrounded by a space on both sides
     // endinject 
 
-  body.mainApp(ng-controller="DashboardController", ng-cloak)
+  body.app(ng-controller="DashboardController", ng-cloak, layout='row', flex, layout-fill)
 
-    // header(ng-hide="true")
-    //   md-toolbar.md-primary
-    //     .md-toolbar-tools
-    //       | my title lol 1
-    //       span( flex )
-    //       md-button
-    //         | look ! a button !
-    // $mdMedia('gt-md')
-    section(layout='row', flex, layout-fill)
-      md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="true")
-          md-toolbar
-            h1.md-toolbar-tools Sidenav Left
-                 
-          md-content.md-padding(ng-controller='LeftCtrl')
-            md-button.md-primary(ng-click='close()', hide-gt-md='') Close Sidenav Left
-                     
-            p(hide-md='', show-gt-md='') This sidenav is locked open on your device. To go back to the default behavior,narrow your display.
+    //SideNav
+    md-sidenav#SideNav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="true")
+      md-content#SideNavContent.md-padding(layout='column', layout-fill, ng-controller='LeftCtrl')
+
+        div.AddSubTools
+
+        // div.app_SideNav_Tools(flex="30",layout='row')
+        //   div(flex)
+        //   div(flex="30")
+        //     md-button.app_Fab.md-fab.md-primary.md-hue-1(aria-label="Add") 
+        //       span.app_Fab_Add +
+        //     h4.app_h4.tac Add Server  
+        //   div(flex="30")
+        //     md-button.app_Fab.md-fab.md-primary.md-hue-1(ng-disabled,aria-label="Sub") 
+        //       span.app_Fab_Sub -
+        //     h4.app_h4.tac Destroy  
+        //   div(flex)
+          
+        div(flex="40") 
+          h4.app_h4 Avalible Apps
+          div
+          
+        div(flex)
              
-        md-content#Dashboard.md-padding(flex)
-          div(layout='column', layout-fill='', layout-align='top center')
-            p The left sidenav will &apos;lock open&apos; on a medium (&gt;=960px wide) device.
-                     
-            // div
-            //   md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='') Toggle left
-                    
-            // div
-            //   md-button.md-primary(ng-click='toggleRight()') Toggle right
-                 
-          div(flex='')
+    md-content#Dashboard.md-padding(flex)
+      div(layout='column', layout-fill, layout-align='top center')
              
-        // md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
-        //   md-toolbar.md-theme-light
-        //     h1.md-toolbar-tools Sidenav Right
-                 
-        //   md-content.md-padding(ng-controller='RightCtrl')
-        //     md-button.md-primary(ng-click='close()') Close Sidenav Right
+      div(flex)
+             
+
