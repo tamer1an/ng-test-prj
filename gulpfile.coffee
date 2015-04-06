@@ -45,14 +45,6 @@ gulp.task 'move:jade', ->
 	.pipe gulp.dest(build_dir)
 
 
-#gulp.task 'move:jade-derectives', ->
-	#gulp.src globs.jade
-	#.pipe plumber()
-	#.pipe jade({ pretty : true })
-	#.pipe inject(gulp.src(globs.app, { read : false }), { ignorePath : ['build'], addRootSlash : false })
-	#.pipe gulp.dest(build_dir)
-
-
 gulp.task 'move:sass', ->
   gulp.src globs.sass
     .pipe plumber()
