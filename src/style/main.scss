@@ -3,9 +3,8 @@
  * stylesheets used throughout the application as this is the only stylesheet in
  * the Grunt configuration that is automatically processed.
  */
-
+ 
 //@import 'angular_material';
-
 
 /* VARIABLES */
 // COLORS 
@@ -14,12 +13,16 @@ $secondary-bg: #1E1E1E;
 $inactive-item: grey;
 $interface-font-color: white;
 $interface-stroke-width: 2px;
+
 // DIMENSIONS 
-$sidebar-width: 210px;
+$sidebar-width: 310px;
+$sidebar-list-item-font-size: 11px;
+$sidebar-list-item-height: 45px;
+
 
 /* RESET */
 body {
-    color:$interface-font-color;
+    color: $interface-font-color;
 }
 
 /* SYSTEM CLASSES */
@@ -33,14 +36,15 @@ body {
 }
 
 #SideNav {
-    width: $sidebar-width;
-    min-width: $sidebar-width;
-    max-width: $sidebar-width;
+    width:    $sidebar-width;
+    min-width:$sidebar-width;
+    max-width:$sidebar-width;
     
     &Content {
         height: calc(100vh);
         overflow: hidden;
         background: $secondary-bg; 
+        padding: 0px;
     }
     
     .app_Fab {
@@ -53,14 +57,24 @@ body {
 /* APP CLASS */
 .app {
     
+    &_avalible {
+        height:$sidebar-list-item-height;
+        background: rgb(random(255),random(255),random(255));
+        
+        &_text {
+            color: white;
+            padding-left:10px;
+        }
+    }
+    
     &_SideNav_Tools {
         margin-top:15px;
     }
     
     &_h4 {
         color: $inactive-item;
-        font-size: 53%;
-        margin-top: 0;
+        font-size: $sidebar-list-item-font-size;
+        margin: 0;
     }
     
     &_Fab {
