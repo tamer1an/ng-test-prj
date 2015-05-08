@@ -12,18 +12,50 @@ html(lang="en", ng-app="msDashboard")
     // endinject 
 
   // Document
-  body.app(ng-controller="DashboardController", ng-cloak, layout='row', flex, layout-fill)
-
-    // Left Navigation
-    md-sidenav#SideNav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="true")
-      md-content#SideNavContent.md-padding(layout='column', layout-fill, ng-controller='LeftCtrl')
-        div.ToolsAddSub
-        div.ToolsAvalibleApps
-        div(flex)
+  body.app.md-padding(
+      ng-controller="DashboardController", 
+      ng-cloak="true"
+    )
     
+    md-toolbar#Dashboard-header(layout="row", layout-align="start center")
+      div.md-toolbar-tools(flex)
+        figure(flex) LOGO
+      
     // Main Content         
-    md-content#Dashboard.md-padding(flex)
-      div(layout='column', layout-fill, layout-align='top center')
-      div(flex)
-             
+    md-content#Dashboard(layout-fill, layout="row", layout-align="center start")
+      form.app_form(ng-submit="$event.preventDefault()", ng-controller="DemoCtrl as ctrl", flex="30",layout="column", layout-align="start center") 
+        div.app_form_title(flex="30") Search
+        div(flex="70") 
+          md-autocomplete(
+              md-selected-item="ctrl.selectedItem",
+              md-search-text-change="ctrl.searchTextChange(ctrl.searchText)",
+              md-search-text="ctrl.searchText",
+              md-selected-item-change="ctrl.selectedItemChange(item)",
+              md-items="item in ctrl.querySearch(ctrl.searchText)",
+              md-item-text="item.display",
+              md-min-length="0",
+              placeholder="What is your favorite US state?")
+              
+            md-item-template
+              span(md-highlight-text="ctrl.searchText", md-highlight-flags="^i") {{item.display}}
+            
+            md-not-found
+              No matches found for "{{ctrl.searchText}}".
+    
+    - var footerTopics=['topic1', 'topic2', 'topic3','topic4'];
+
+    footer.app_footer#Dashboard-footer
+
+      div.app_footer_title(layout="row") 
+        - each topic in footerTopics
+          div(flex="25")= topic
+        
+      div.app_footer_content(layout="row") 
+        - each topic in footerTopics
+          div(flex="25",layout="column") 
+            - for (var i=0; i<3; i++)
+              div= 'test' + i
+              
+              
+
 

@@ -5,19 +5,36 @@
  */
  
 //@import 'angular_material';
+/* MIXINS */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 
 /* VARIABLES */
 // COLORS 
-$primary-bg: #000000;
-$secondary-bg: #1E1E1E;
+$primary-bg: #FFFFFF;
+$secondary-bg: #4882BE;
 $inactive-item: grey;
-$interface-font-color: white;
+$interface-font-color: grey;
+$interface-stroke-color: #4882BE;
 $interface-stroke-width: 2px;
 
 // DIMENSIONS 
+$header-height: 125px;
+
 $sidebar-width: 310px;
 $sidebar-list-item-font-size: 11px;
 $sidebar-list-item-height: 45px;
+
+$main-border: 2px solid #aec7e3;
+$basic-border: 1px solid lightgrey; 
+
+
+
 
 
 /* RESET */
@@ -32,67 +49,64 @@ body {
 
 /* APP ID */
 #Dashboard {
-     background: $primary-bg;
-}
-
-#SideNav {
-    width:    $sidebar-width;
-    min-width:$sidebar-width;
-    max-width:$sidebar-width;
-    
-    &Content {
-        height: calc(100vh);
-        overflow: hidden;
-        background: $secondary-bg; 
-        padding: 0px;
+    min-height: 500px;
+    background: $primary-bg;
+    position: absolute;
+    top: 0;
+     
+    &-header {
+        background: white;
+        height: $header-height;
+        box-shadow: 0px 2px 5px 0 #aec7e3;
     }
     
-    .app_Fab {
-         color: $interface-font-color;
-         transform: scale(0.7);
-         background: $secondary-bg;
+    &-footer {
+        transform: translateY(330px);
+        position: relative;
+        height:40px;
     }
 }
 
 /* APP CLASS */
 .app {
+    padding: 0;
     
-    &_avalible {
-        height:$sidebar-list-item-height;
-        background: rgb(random(255),random(255),random(255));
+    &_form{
+        @include border-radius(10px);
+        background: #f7f7f7;
+        border:$basic-border;
+        height: 150px;
+        min-width: 488px;
+        transform: translateY(220px);
         
-        &_text {
-            color: white;
-            padding-left:10px;
+        &_title{
+            margin-top:15px;
         }
     }
     
-    &_SideNav_Tools {
-        margin-top:15px;
+    &_footer {
+        &_title{
+            box-shadow: -2px 0px 4px 0 #6CA5E5;
+            height: 40px;
+            
+            > div{
+                text-align: left;
+                text-indent: 20px;
+                padding-top: 10px;
+                font-size: larger;
+            }
+            
+        }
+        
+        &_content{
+             padding-top: 10px;
+            
+             > div{
+                text-align: left;
+                text-indent: 20px;
+
+            }
+        }
     }
     
-    &_h4 {
-        color: $inactive-item;
-        font-size: $sidebar-list-item-font-size;
-        margin: 0;
-    }
-    
-    &_Fab {
-        background: $secondary-bg;
-        border: $interface-stroke-width solid $interface-font-color;
-        font-size:150%;
-        
-        &_Add, &_Sub {
-          font-size: 150%;
-          font-family: serif;
-        }
-        
-        &_Add {
-            line-height: 40px;
-        }
-        
-        &_Sub {
-            line-height: 0px;
-        }
-    }
 }
