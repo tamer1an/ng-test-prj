@@ -1,5 +1,5 @@
 {
-  "name": "msDashboard",
+  "name": "filter",
   "version": "0.0.1",
   "author": "Andrii Trybynenko",
   "dependencies": {
@@ -27,11 +27,12 @@
     "jade":"*"
   },
   "devDependencies": {
-    "6to5": "^3.6.5",
+    "babel": "*",
     "gulp-babel": "^4.0.0",
-    "gulp-es6to5": "^1.0.2",
+    "gulp-es6to5": "*",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
-     "express": "*"
+    "express": "*"
   }
 }
+
