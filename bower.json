@@ -6,9 +6,7 @@
         "angular-mocks": "*"
     },
     "dependencies": {
-        "angular-material-source": "git@github.com:angular/material.git",
         "angular-ui-router": "*",
-        "angular-material" : "*",
         "restangular" : "*"
     },
     "resolutions": {

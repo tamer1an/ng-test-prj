@@ -17,96 +17,36 @@
 /* VARIABLES */
 // COLORS 
 $primary-bg: #FFFFFF;
-$secondary-bg: #4882BE;
-$inactive-item: grey;
-$interface-font-color: grey;
-$interface-stroke-color: #4882BE;
-$interface-stroke-width: 2px;
 
 // DIMENSIONS 
 $header-height: 125px;
 
-$sidebar-width: 310px;
-$sidebar-list-item-font-size: 11px;
-$sidebar-list-item-height: 45px;
-
-$main-border: 2px solid #aec7e3;
-$basic-border: 1px solid lightgrey; 
-
-
-
-
-
-/* RESET */
-body {
-    color: $interface-font-color;
-}
-
-/* SYSTEM CLASSES */
-.tac{
-    text-align:center;
-}
 
 /* APP ID */
 #Dashboard {
-    min-height: 500px;
-    background: $primary-bg;
-    position: absolute;
-    top: 0;
-     
+
     &-header {
-        background: white;
-        height: $header-height;
-        box-shadow: 0px 2px 5px 0 #aec7e3;
+
     }
     
     &-footer {
-        transform: translateY(330px);
-        position: relative;
-        height:40px;
+    
     }
 }
 
 /* APP CLASS */
 .app {
-    padding: 0;
+   
     
     &_form{
-        @include border-radius(10px);
-        background: #f7f7f7;
-        border:$basic-border;
-        height: 150px;
-        min-width: 488px;
-        transform: translateY(220px);
-        
+     
         &_title{
             margin-top:15px;
         }
     }
     
     &_footer {
-        &_title{
-            box-shadow: -2px 0px 4px 0 #6CA5E5;
-            height: 40px;
-            
-            > div{
-                text-align: left;
-                text-indent: 20px;
-                padding-top: 10px;
-                font-size: larger;
-            }
-            
-        }
-        
-        &_content{
-             padding-top: 10px;
-            
-             > div{
-                text-align: left;
-                text-indent: 20px;
-
-            }
-        }
+       
     }
     
 }
