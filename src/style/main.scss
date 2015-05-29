@@ -52,28 +52,59 @@ $header-height: 125px;
       background: grey;
       border-bottom: 10px solid dimgrey;
       margin-bottom: 75px;
+      text-align: right;
+
+      &_hamburger{
+        width: 25px;
+        height: 25px;
+        background: red;
+        margin: 20px 20px 0 0;
+        display: inline-block;
+      }
     }
 
     &_signIn{
       height: 64px;
       background: grey;
+      text-align: center;
+      vertical-align: baseline;
+
+      &_text{
+        display: inline-block;
+      }
     }
 
     &_connectionType{
       height: 50px;
-      background: blue;
+      background: grey;
+      border-top: 1px solid green;
+      text-indent: 15px;
+      vertical-align: baseline;
+
+      &_text{
+        display: inline-block;
+      }
     }
 
+    &_section{
+      height: 995px;
+      margin-bottom: 158px;
+      background: darkgoldenrod;
 
-    &_form{
-
+      &_form{
         &_title{
-            margin-top:15px;
+
         }
+      }
     }
+
     
     &_footer {
-       
+      height: 109px;
+      background: blue;
+
+      &_copyright{
+
+      }
     }
-    
 }
