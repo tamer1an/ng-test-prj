@@ -13,6 +13,11 @@
           border-radius: $radius;
 }
 
+/*RESET*/
+body {
+  margin: 0;
+  padding: 0;
+}
 
 /* VARIABLES */
 // COLORS 
@@ -35,11 +40,33 @@ $header-height: 125px;
 }
 
 /* APP CLASS */
-.app {
-   
-    
+.app{
+  width:  316px;
+  height: 100%;
+  background: $primary-bg;
+  margin: 0 auto;
+
+    &_toolbar{
+      width:  100%;
+      height: 58px;
+      background: grey;
+      border-bottom: 10px solid dimgrey;
+      margin-bottom: 75px;
+    }
+
+    &_signIn{
+      height: 64px;
+      background: grey;
+    }
+
+    &_connectionType{
+      height: 50px;
+      background: blue;
+    }
+
+
     &_form{
-     
+
         &_title{
             margin-top:15px;
         }
