@@ -44,7 +44,7 @@ block metaBlock
 block register_form
     fieldset.app_section_form_fieldset
         label(for="gender") Gender
-        legend Gender
+
         input#gender.radio(
             required,
             type="radio",
@@ -53,6 +53,7 @@ block register_form
             name="gender",
             value="1",
         )
+        | Male
         input#gender.radio(
             required,
             type="radio",
@@ -60,6 +61,7 @@ block register_form
             name="gender",
             value="0",
         )
+        | Female
     fieldset.app_section_form_fieldset
         label(for="fname") F. Name
         legend F. Name
@@ -138,12 +140,6 @@ block register_form
             name="repassword"
         )
 
-    h4 agreement
-    input#contact-submit.submit(
-        name="submit_form",
-        value="Submit",
-        type="submit"
-    )
 
 //    BODY LAYOUT
 block application
@@ -167,5 +163,12 @@ block application
             h3.app_section_form_title Register
             form.app_section_form(method="post", action="index.html", accept-charset="utf-8")
                 block register_form
+                h4 agreement <a href="#"> Link </a>
+                input#contact-submit.submit(
+                    name="submit_form",
+                    value="Submit",
+                    type="submit"
+                )
+                h4 *Additional
 
         footer.app_footer
