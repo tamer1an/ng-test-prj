@@ -145,18 +145,19 @@ block register_form
 block application
     body.app
 
-        div.app_toolbar
-            div.app_toolbar_hamburger
+        .app_toolbar
+            .app_toolbar_hamburger
+                .app_toolbar__middleLine
 
         nav.app_tabs
             a(href="#").app_tabs_tab TAB1
             a(href="#").app_tabs_tab TAB2
             a(href="#").app_tabs_tab TAB3
 
-        div.app_signIn
+        .app_signIn
             p.app_signIn_text Login
 
-        div.app_connectionType
+        .app_connectionType
             p.app_connectionType_text Secured
 
         section.app_section
@@ -172,3 +173,5 @@ block application
                 h4 *Additional
 
         footer.app_footer
+            div Footer text
+        .app_footer-copyright &copy;trybynenko

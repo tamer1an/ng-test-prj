@@ -13,6 +13,13 @@
           border-radius: $radius;
 }
 
+@mixin no-select($val) {
+  -webkit-user-select: $val;
+  -moz-user-select: $val;
+  -ms-user-select: $val;
+  user-select: $val;
+}
+
 /*RESET*/
 body {
   margin: 0;
@@ -23,7 +30,7 @@ body {
 // COLORS 
 $color: #2ca1b6;
 $color-bg: #FFFFFF;
-$color-grey:#f2f1eb;
+$color-grey:lightgrey;
 $color-dark:#343a3f;
 $color-button:#f0c702;
 
@@ -49,13 +56,24 @@ $break-ipad-portrait: 640px;
       height: 58px;
       border-bottom: 10px solid $color;
       text-align: right;
+      cursor: pointer;
+      @include no-select(none);
 
       &_hamburger{
         width: 25px;
-        height: 25px;
-        background: $color-grey;
+        height: 18px;
         margin: 20px 20px 0 0;
         display: inline-block;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid grey;
+      }
+
+      &__middleLine{
+        border-top: 2px solid grey;
+        height: 1px;
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
       }
     }
 
@@ -63,6 +81,7 @@ $break-ipad-portrait: 640px;
       width: 100%;
       height: 75px;
       vertical-align: baseline;
+      @include no-select(none);
 
       &_tab{
         display: inline-block;
@@ -164,8 +183,9 @@ $break-ipad-portrait: 640px;
     &_footer {
       height: 109px;
       background: $color-dark;
+      color: $color;
 
-      &_copyright{
+      &-copyright{
 
       }
     }
