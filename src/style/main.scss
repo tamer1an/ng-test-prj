@@ -30,22 +30,10 @@ $color-button:#f0c702;
 // TEXT
 $text-indent: 15px;
 
-
 // DIMENSIONS 
-$header-height: 125px;
-
-
-/* APP ID */
-#Dashboard {
-
-    &-header {
-
-    }
-    
-    &-footer {
-    
-    }
-}
+$break-small: 320px;
+$break-large: 1200px;
+$break-ipad-portrait: 640px;
 
 /* APP CLASS */
 .app{
@@ -118,12 +106,43 @@ $header-height: 125px;
 
       &_form{
         display: inline-block;
+        width: 100%;
+
+        &_fieldset{
+          width: 100%;
+          border: none;
+
+          > label{
+            display: none;
+            @media screen and (min-width: $break-ipad-portrait) {
+              display: inline-block;
+            }
+          }
+
+          > legend{
+            display: inline-block;
+            @media screen and (min-width: $break-ipad-portrait) {
+              display: none;
+            }
+          }
+
+          > .radio{
+
+          }
+
+          > .submit{
+
+          }
+
+          > .text, > .number, > .date, > .password, > .email {
+            height: 40px;
+            width: 100%;
+          }
+        }
 
         &_title{
           text-indent: $text-indent;
           width: 100%;
-
-
         }
       }
     }
@@ -137,3 +156,25 @@ $header-height: 125px;
       }
     }
 }
+
+
+
+
+///* iPad (landscape) ----------- */
+//@media screen and (max-width:960px) {
+//
+//}
+//
+///* ipad (portraid) --------- */
+//@media only screen and (max-width : 640px) {
+//
+//}
+//
+///* Smartphones (landscape) ----------- */
+//@media only screen and (max-width : 480px) {
+//
+//}
+///* Smartphones (portrait) ----------- */
+//@media only screen and (max-width : 320px) {
+//
+//}

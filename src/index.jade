@@ -1,112 +1,151 @@
 extends layout
 
-block metaBlock
-    meta(charset="utf-8")
-    title Form
-    meta(name="author", content="Andrii Trybynenko")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.9, user-scalable=yes")
-    link(href='images/favicon.ico', rel='shortcut icon', type='image/x-icon')
-    
+block seo_basic
+    meta(name="author",          content="Andrii Trybynenko")
+    meta(name="copyright",       content="&copy;@trybynenko")
+    meta(name="application-name",content="/")
+    meta(itemprop="name",        content="Subscribe form" )
+    meta(itemprop="description", content="This is web page." )
 
+block seo_gplus
+    meta(property="og:title",       content="Form", itemprop="keywords")
+    meta(property="og:description", content="Form")
+    meta(property="og:type",        content="Shop")
+    meta(property="og:url",        content="/")
+    meta(property="og:site_name",   content="/")
+    //meta(itemprop="image", content="" )
+
+block seo_twitter
+    meta(name="twitter:card",   content="Form")
+    meta(name="twitter:site",   content="@shop")
+    meta(name="twitter:title",  content="Form")
+    meta(name="twitter:description", content="description")
+    meta(name="twitter:url",    content="/")
+
+block meta_seo
+    meta(name="robots", content="all")
+    meta(http-equiv="cache-control",content="Public")
+
+    block seo_basic
+    block seo_gplus
+    block seo_twitter
+
+block metaBlock
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+    link(href='images/favicon.ico', rel='bar-icon', type='image/x-icon')
+    title Form
+    block meta_seo
+
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.9, user-scalable=yes")
+    meta(name="apple-mobile-web-app-capable", 			content="yes" )
+    meta(name="apple-mobile-web-app-status-bar-style", 	content="black-translucent")
+
+//    USER REG FORM
 block register_form
-    fieldset
+    fieldset.app_section_form_fieldset
         label(for="gender") Gender
-        input(
+        legend Gender
+        input#gender.radio(
             required,
             type="radio",
             autofocus="true",
             title="Male",
-            id="gender",
             name="gender",
             value="1",
         )
-        input(
+        input#gender.radio(
             required,
             type="radio",
             title="Female",
-            id="gender",
             name="gender",
             value="0",
         )
-    fieldset
-        label(for="name") F. Name
-        input(
+    fieldset.app_section_form_fieldset
+        label(for="fname") F. Name
+        legend F. Name
+        input#fname.text(
             required,
-            placeholder="Name",
-            title="Name",
-            id="fname",
+            placeholder="F. Name",
+            title="F. Name",
             name="fname",
             type="text"
         )
-    fieldset
-        label(for="name") L.Name
-        input(
-            required="required",
+    fieldset.app_section_form_fieldset
+        label(for="lname") L.Name
+        legend L. Name
+        input#lname.text(
+            required,
             placeholder="L.Name",
             title="L.Name",
-            id="lname",
             name="lname",
             type="text"
         )
-    fieldset
+    fieldset.app_section_form_fieldset
         label(for="date") Date
-        input(
+        legend Date
+        input#date.date(
             pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)",
-            required="required",
+            required,
             placeholder="Required (DD.MM.YYYY)",
-            id="date",
             title="Required (DD.MM.YYYY)",
             name="date",
             type="date"
         )
-    fieldset
+    fieldset.app_section_form_fieldset
         label(for="street") Street
-        input#street(type="text")
-    fieldset
+        legend Street
+        input#street.text(type="text")
+    fieldset.app_section_form_fieldset
         label(for="street") st. num
-        input#street-number(type="number")
-    fieldset
-        label(for="street") Street
-        input#street(type="text")
-    fieldset
-        label(for="street") st. num
-        input#street-number(type="number")
-    fieldset
+        legend st.num
+        input#street-number.number(type="number")
+    fieldset.app_section_form_fieldset
+        label(for="plz") PLZ
+        legend PLZ
+        input#plz.text(type="text")
+    fieldset.app_section_form_fieldset
+        label(for="ort") Ort
+        legend Ort
+        input#ort.number(type="number",min="1")
+    fieldset.app_section_form_fieldset
         label(for="email") Email
-        input(
-            required="required",
+        legend Email
+        input#email.email(
+            required,
             placeholder="Required",
             title="Required",
             type="email",
-            name="email",
-            id="email"
+            name="email"
         )
-    fieldset
-        label(for="email") Password
-        input(
-            required="required",
+    fieldset.app_section_form_fieldset
+        label(for="password") Password
+        legend Password
+        input#password.password(
+            required,
             placeholder="Password",
             title="Required",
             type="password",
-            name="password",
-            id="password"
+            name="password"
         )
-    fieldset
-        label(for="email") Re-password
-        input(
-            required="required",
+    fieldset.app_section_form_fieldset
+        label(for="repassword") Re-password
+        legend Re-password
+        input#repassword.password(
+            required,
             placeholder="Re-password",
             title="Repassword",
             type="password",
-            name="repassword",
-            id="repassword")
+            name="repassword"
+        )
 
     h4 agreement
-    input(id="contact-submit", name="submit_form", value="Submit", type="submit")
+    input#contact-submit.submit(
+        name="submit_form",
+        value="Submit",
+        type="submit"
+    )
 
-
-
-
+//    BODY LAYOUT
 block application
     body.app
 
