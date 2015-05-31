@@ -1,11 +1,20 @@
 extends layout
 
+// toolbar svg markup
+block hamburgerSvg
+    | <svg version="1.1" id="hamburgerSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    | y="0px" viewBox="0 0 25 25" enable-background="new 0 0 25 25" xml:space="preserve">
+    | <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="2.9" y1="2.5" x2="22.3" y2="2.5"/>
+    | <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="2.9" y1="12.5" x2="22.3" y2="12.5"/>
+    | <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="2.9" y1="22.5" x2="22.3" y2="22.5"/>
+    | </svg>
+
 block application
     body.app(itemprop="mainContentOfPage")
 
         .app_toolbar
             .app_toolbar_hamburger
-                .app_toolbar__middleLine
+                block hamburgerSvg
 
         nav.app_tabs
             a(href="#").app_tabs_tab TAB1
