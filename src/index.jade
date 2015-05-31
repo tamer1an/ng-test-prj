@@ -1,8 +1,7 @@
 extends layout
 
-//    BODY LAYOUT
 block application
-    body.app
+    body.app(itemprop="mainContentOfPage")
 
         .app_toolbar
             .app_toolbar_hamburger
@@ -19,15 +18,18 @@ block application
         .app_connectionType
             p.app_connectionType_text Secured
 
-        section.app_section
-            h3.app_section_form_title Register
+        section.app_section(itemscope, itemtype="https://schema.org/RegisterAction")
+            h3.app_section_form_title(itemprop="name") Register
             form.app_section_form(method="post", action="index.html", accept-charset="utf-8")
                 include form.jade
-                h4.app_section_form_agreementLink agreement <a href="#"> Link </a>
+                h4.app_section_form_agreementLink
+                    | agreement &nbsp
+                    a(href="#", itemprop="url") Link
                 input#contact-submit.submit(
                     name="submit_form",
                     value="Submit",
-                    type="submit"
+                    type="submit",
+                    itemprop="target"
                 )
                 h4.app_section_form_note *Additional
 
