@@ -6,13 +6,24 @@
  
 //@import 'angular_material';
 /* MIXINS */
+@mixin submit-button() {
+  background: #eec402;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI0NCUiIHN0b3AtY29sb3I9IiNlZWM0MDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2MSUiIHN0b3AtY29sb3I9IiNlYWJjMDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #eec402 44%, #eabc02 61%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#eec402), color-stop(61%,#eabc02));
+  background: -webkit-linear-gradient(top,  #eec402 44%,#eabc02 61%);
+  background: -o-linear-gradient(top,  #eec402 44%,#eabc02 61%);
+  background: -ms-linear-gradient(top,  #eec402 44%,#eabc02 61%);
+  background: linear-gradient(to bottom,  #eec402 44%,#eabc02 61%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eec402', endColorstr='#eabc02',GradientType=0 );
+
+}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
-
 @mixin no-select($val) {
   -webkit-user-select: $val;
   -moz-user-select: $val;
@@ -150,6 +161,8 @@ $break-ipad-portrait: 640px;
 
           > label{
             display: none;
+            font-weight: bold;
+
             @media screen and (min-width: $break-ipad-portrait) {
               display: inline-block;
               width: 37%;
@@ -162,6 +175,7 @@ $break-ipad-portrait: 640px;
           }
 
           > legend{
+            font-weight: bold;
             display: inline-block;
             @media screen and (min-width: $break-ipad-portrait) {
               display: none;
@@ -169,16 +183,20 @@ $break-ipad-portrait: 640px;
           }
 
           > .radio{
+            height: 20px;
+            width: 30px;
+
             @media screen and (min-width: $break-ipad-portrait) {
               margin-left: 6.1%;
             }
           }
 
-
           > .text, > .number, > .date, > .password, > .email {
             height: 40px;
             width: 99%;
             padding-left: 5px;
+            border: 1px solid $color-grey;
+            background: whitesmoke;
 
             @media screen and (min-width: $break-ipad-portrait) {
               width: 55%;
@@ -189,9 +207,16 @@ $break-ipad-portrait: 640px;
         }
 
         > .submit{
+          @include border-radius(4px);
+
           width: 100%;
           height: 52px;
+          border: 1px solid #F9D802;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #3E3D3D;
 
+          @include submit-button();
 
           @media screen and (min-width: $break-ipad-portrait) {
             margin: 0 auto;
@@ -233,8 +258,20 @@ $break-ipad-portrait: 640px;
       background: $color-dark;
       color: $color;
 
-      &-copyright{
+      &_nav{
+        margin: 0 auto;
+        width: 70%;
+        text-align: center;
 
+        &_item {
+          display: inline-block;
+          line-height: 100px;
+          margin-right: 5px;
+        }
+      }
+
+      &-copyright{
+        padding: 5px 0;
       }
     }
 }
