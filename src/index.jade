@@ -164,13 +164,13 @@ block application
             h3.app_section_form_title Register
             form.app_section_form(method="post", action="index.html", accept-charset="utf-8")
                 block register_form
-                h4 agreement <a href="#"> Link </a>
+                h4.app_section_form_agreementLink agreement <a href="#"> Link </a>
                 input#contact-submit.submit(
                     name="submit_form",
                     value="Submit",
                     type="submit"
                 )
-                h4 *Additional
+                h4.app_section_form_note *Additional
 
         footer.app_footer
             div Footer text
