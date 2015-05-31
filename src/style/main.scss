@@ -178,6 +178,7 @@ $break-ipad-portrait: 640px;
           > .text, > .number, > .date, > .password, > .email {
             height: 40px;
             width: 99%;
+            padding-left: 5px;
 
             @media screen and (min-width: $break-ipad-portrait) {
               width: 55%;
@@ -205,6 +206,13 @@ $break-ipad-portrait: 640px;
           width: 88.60759493670886%;
         }
 
+        &_agreementLink{
+          @media screen and (min-width: $break-ipad-portrait) {
+            width: 56%;
+            float: right;
+          }
+        }
+
         &_note{
           @media screen and (min-width: $break-ipad-portrait) {
             float: right;
@@ -212,11 +220,9 @@ $break-ipad-portrait: 640px;
             top: 55px;
             left: 85px;
           }
-        }
-        &_agreementLink{
-          @media screen and (min-width: $break-ipad-portrait) {
-            width: 56%;
-            float: right;
+
+          @media screen and (min-width: $break-large) {
+            display: none;
           }
         }
       }
