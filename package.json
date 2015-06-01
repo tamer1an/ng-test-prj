@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "babel": "*",
-    "express": "*",
     "gulp-babel": "^4.0.0",
     "gulp-es6to5": "*",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-phantomjs-launcher": "^0.1.4",
+    "express": "*"
   }
 }

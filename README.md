@@ -1,23 +1,39 @@
-# Ms dashboard
-
+# Responsive form
 ***
 
 ## Quick Start
-1) install NodeJs
-2) $ npm install
-3) $ npm install -g coffee
-4) $ gulp watch-simple (build project)
-5) $ coffee app.coffee (Start Server)
+1) install NodeJs https://nodejs.org/
+check `npm` in console. If command not working,  configure system path and refresh OS session
 
-Simply running "gulp watch-simple" will do the following:
- - Build everything (concat, create js templates of html, etc) and place it into a "build" folder
- - Run all your tests
- - Watch your files for changes to do the above without any intervention
- - Launch express server to host your app at http://localhost:9000/index.html
- - Setup LiveReload so you immediately see changes in your browser (you still have to enable LiveReload on your browser)
+navigate to project dir and install
+packages from package.json
 
-A simplified version of the ngBoilerplate angular project template.
+Get front-end dependency manager
 
+2) $ `npm install -g bower`
+
+get dependency's
+
+3) $ `bower install`
+
+get unit test tool
+
+4) $ `npm install -g karma`
+
+5) $ `npm install -g coffee-script`
+
+get build manager
+
+6) $ `npm install -g gulp`
+
+7) $ `npm install`
+
+8) $ `gulp default` (build project)
+
+Run nodejs mock-up server on coffee
+9) $ `coffee app.coffee` (Start Server)
+
+10) navigate in browser to `http://localhost:3000/`
 
 Resources used in the project:
 
@@ -30,8 +46,4 @@ Build and Back-end tools
 6) es6to5
 7) coffee
 8) karma
-
-Front-end tools
-1) angular
-1) angular-material
 
